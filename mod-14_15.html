@@ -1,0 +1,1698 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice Quiz</title>
+
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.35; }
+    #bank { display: none; }
+
+    .topbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+    button { padding: 8px 12px; border-radius: 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    .status { margin-left: auto; font-weight: 600; }
+
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+    .q { font-weight: 700; margin-bottom: 12px; padding: 10px; border-radius: 10px; border: 1px solid #eee; }
+    .q.correct { border-color: #1a7f37; background: #eaffef; }
+    .q.wrong { border-color: #d1242f; background: #ffecec; }
+
+    .choice { display: block; padding: 10px 12px; border-radius: 10px; border: 1px solid #eee; margin: 10px 0; cursor: pointer; user-select: none; }
+    .choice:hover { border-color: #bbb; }
+    .choice.correct { border-color: #1a7f37; background: #eaffef; }
+    .choice.wrong { border-color: #d1242f; background: #ffecec; }
+
+    .explanation { margin-top: 12px; padding: 12px; border-radius: 10px; background: #f6f8fa; display: none; }
+    .explanation.show { display: block; }
+
+    .footer { display: flex; gap: 10px; margin-top: 14px; }
+    .counter { margin-left: auto; opacity: 0.8; }
+
+    /* NAVBAR */
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      border-color: #ccc;
+      background: #f7f7f7;
+    }
+
+    .navbar a.active {
+      background: #eaeaea;
+      border-color: #bbb;
+    }
+
+    .navbar .spacer {
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./app.js"></script>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("quiz_authed");
+      window.location.href = "../index.html";
+    }
+  </script>
+
+  <div class="navbar">
+    <a href="./mod-final.html" id="nav-final">mod-final</a>
+    <a href="./mod-14_15.html" id="nav-1415">mod-14_15</a>
+    <a href="./mod-16_17.html" id="nav-1617">mod-16_17</a>
+
+    <div class="spacer"></div>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const path = window.location.pathname;
+
+    if (path.includes("mod-final")) {
+      document.getElementById("nav-final").classList.add("active");
+    } else if (path.includes("mod-14_15")) {
+      document.getElementById("nav-1415").classList.add("active");
+    } else if (path.includes("mod-16_17")) {
+      document.getElementById("nav-1617").classList.add("active");
+    }
+  </script>
+
+  <hr>
+
+
+  <div class="topbar">
+    <button id="retakeBtn" type="button">Retake</button>
+    <button id="prevBtn" type="button">Prev</button>
+    <button id="nextBtn" type="button">Next</button>
+    <div class="status" id="status">Score: 0 / 0</div>
+  </div>
+
+  <div class="card">
+    <div id="question" class="q"></div>
+    <div id="choices"></div>
+    <div id="explanation" class="explanation"></div>
+
+    <div class="footer">
+      <div class="counter" id="counter"></div>
+    </div>
+  </div>
+
+  <!-- ======= YOUR SOURCE HTML BANK (paste as-is) ======= -->
+  <div id="bank">
+    <h2>ITN (Version 7.00) – Network Application Communications Exam Answers 2025 Full 100%</h2>
+    <ol>
+      <li>
+        <h3>A PC is downloading a large file from a server. The TCP window is 1000 bytes. The server is sending the file using 100-byte segments. How many segments will the server send before it requires an acknowledgment from the PC?</h3>
+        <ul>
+          <li>1 segment</li>
+          <li><span style="color: #cc0000;">10 segments</span></li>
+          <li>100 segments</li>
+          <li>1000 segments<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Answers Explanation &amp; Hints:</b></p>
+                    <p>With a window of 1000 bytes, the destination host accepts segments until all 1000 bytes of data have been received. Then the destination host sends an acknowledgment.</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    
+    <li>
+<h3>Which factor determines TCP window size?</h3>
+<ul>
+<li>the amount of data to be transmitted</li>
+<li>the number of services included in the TCP segment</li>
+<li><span style="color: #cc0000;">the amount of data the destination can process at one time</span></li>
+<li>the amount of data the source is capable of sending at one time<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Window is the number of bytes that the sender will send prior to expecting an acknowledgement from the destination device. The initial window is agreed upon during the session startup via the three-way handshake between source and destination. It is determined by how much data the destination device of a TCP session is able to accept and process at one time.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What does a client do when it has UDP datagrams to send?</h3>
+<ul>
+<li><span style="color: #cc0000;">It just sends the datagrams.</span></li>
+<li>It queries the server to see if it is ready to receive data.</li>
+<li>It sends a simplified three-way handshake to the server.</li>
+<li>It sends to the server a segment with the SYN flag set to synchronize the conversation.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>When a client has UDP datagrams to send, it just sends the datagrams.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three fields are used in a UDP segment header? (Choose three.)</h3>
+<ul>
+<li>Window Size</li>
+<li><span style="color: #cc0000;">Length </span></li>
+<li><span style="color: #cc0000;">Source Port</span></li>
+<li>Acknowledgment Number</li>
+<li><span style="color: #cc0000;">Checksum</span></li>
+<li>Sequence Number<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>A UDP header consists of only the Source Port, Destination Port, Length, and Checksum fields. Sequence Number, Acknowledgment Number, and Window Size are TCP header fields.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What are two roles of the transport layer in data communication on a network? (Choose two.)</h3>
+<ul>
+<li><span style="color: #cc0000;">identifying the proper application for each communication stream </span></li>
+<li><span style="color: #cc0000;">tracking the individual communication between applications on the source and destination hosts</span></li>
+<li>providing frame delimiting to identify bits making up a frame</li>
+<li>performing a cyclic redundancy check on the frame for errors</li>
+<li>providing the interface between applications and the underlying network over which messages are transmitted<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The transport layer has several responsibilities. The primary responsibilities include the following:<br />
+Tracking the individual communication streams between applications on the source and destination hosts<br />
+Segmenting data at the source and reassembling the data at the destination<br />
+Identifying the proper application for each communication stream through the use of port numbers</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What information is used by TCP to reassemble and reorder received segments?</h3>
+<ul>
+<li>port numbers</li>
+<li><span style="color: #cc0000;">sequence numbers</span></li>
+<li>acknowledgment numbers</li>
+<li>fragment numbers<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>At the transport layer, TCP uses the sequence numbers in the header of each TCP segment to reassemble the segments into the correct order.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What important information is added to the TCP/IP transport layer header to ensure communication and connectivity with a remote network device?</h3>
+<ul>
+<li>timing and synchronization</li>
+<li><span style="color: #cc0000;">destination and source port numbers</span></li>
+<li>destination and source physical addresses</li>
+<li>destination and source logical network addresses<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The destination and source port numbers are used to identify exactly which protocol and process is requesting or responding to a request.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which two characteristics are associated with UDP sessions? (Choose two.)</h3>
+<ul>
+<li><span style="color: #cc0000;">Destination devices receive traccic with minimal delay.</span></li>
+<li>Transmitted data segments are tracked.</li>
+<li>Destination devices reassemble messages and pass them to an application.</li>
+<li><span style="color: #cc0000;">Received data is unacknowledged.</span></li>
+<li>Unacknowledged data packets are retransmitted.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>TCP:<br />
+· Provides tracking of transmitted data segments<br />
+· Destination devices will acknowledge received data.<br />
+· Source devices will retransmit unacknowledged data.</p>
+<p>UDP<br />
+· Destination devices will not acknowledge received data<br />
+· Headers use very little overhead and cause minimal delay.​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client application needs to terminate a TCP communication session with a server. Place the termination process steps in the order that they will occur. (Not all options are used.)</h3>
+<figure id="attachment_251" aria-describedby="caption-attachment-251" style="width: 1968px" class="wp-caption alignnone"><img fetchpriority="high" decoding="async" class="size-full wp-image-251" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201968%201102'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 14 - 15 Network Application Communications Exam Answers 001" width="1968" height="1102" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1.jpg 1968w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-300x168.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-1024x573.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-768x430.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-1536x860.jpg 1536w" data-lazy-sizes="(max-width: 1968px) 100vw, 1968px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1.jpg" /><noscript><img fetchpriority="high" decoding="async" class="size-full wp-image-251" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1.jpg" alt="CCNA1 v7 - ITNv7 - Modules 14 - 15 Network Application Communications Exam Answers 001" width="1968" height="1102" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1.jpg 1968w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-300x168.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-1024x573.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-768x430.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-14-15-Network-Application-Communications-Exam-Answers-001-1-1536x860.jpg 1536w" sizes="(max-width: 1968px) 100vw, 1968px" /></noscript><figcaption id="caption-attachment-251" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 14 &#8211; 15 Network Application Communications Exam Answers 001</figcaption></figure>
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>In order to terminate a TCP session, the client sends to the server a segment with the FIN flag set. The server acknowledges the client by sending a segment with the ACK flag set. The server sends a FIN to the client to terminate the server to client session. The client acknowledges the termination by sending a segment with the ACK flag set.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<h3>Which flag in the TCP header is used in response to a received FIN in order to terminate connectivity between two network devices?</h3>
+<ul>
+<li>FIN</li>
+<li><span style="color: #cc0000;">ACK</span></li>
+<li>SYN</li>
+<li>RST<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>In a TCP session, when a device has no more data to send, it will send a segment with the FIN flag set. The connected device that receives the segment will respond with an ACK to acknowledge that segment. The device that sent the ACK will then send a FIN message to close the connection it has with the other device. The sending of the FIN should be followed with the receipt of an ACK from the other device.​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which protocol or service uses UDP for a client-to-server communication and TCP for server-to-server communication?</h3>
+<ul>
+<li>HTTP</li>
+<li>FTP</li>
+<li><span style="color: #cc0000;">DNS</span></li>
+<li>SMTP<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Some applications may use both TCP and UDP. DNS uses UDP when clients send requests to a DNS server, and TCP when two DNS serves directly communicate.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is a characteristic of UDP?</h3>
+<ul>
+<li>UDP datagrams take the same path and arrive in the correct order at the destination.​</li>
+<li>Applications that use UDP are always considered unreliable.​</li>
+<li><span style="color: #cc0000;">UDP reassembles the received datagrams in the order they were received.</span></li>
+<li>UDP only passes data to the network when the destination is ready to receive the data.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>UDP has no way to reorder the datagrams into their transmission order, so UDP simply reassembles the data in the order it was received and forwards it to the application.​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What kind of port must be requested from IANA in order to be used with a specific application?</h3>
+<ul>
+<li><span style="color: #cc0000;">registered port</span></li>
+<li>private port</li>
+<li>dynamic port</li>
+<li>source port<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Registered ports (numbers 1024 to 49151) are assigned by IANA to a requesting entity to use with specific processes or applications. These processes are primarily individual applications that a user has chosen to install, rather than common applications that would receive a well-known port number. For example, Cisco has registered port 1985 for its Hot Standby Routing Protocol (HSRP) process.​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three application layer protocols use TCP? (Choose three.)</h3>
+<ul>
+<li><span style="color: #cc0000;">SMTP </span></li>
+<li><span style="color: #cc0000;">FTP</span></li>
+<li>SNMP</li>
+<li><span style="color: #cc0000;">HTTP</span></li>
+<li>TFTP</li>
+<li>DHCP<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Some protocols require the reliable data transport that is provided by TCP. In addition, these protocols do not have real time communication requirements and can tolerate some data loss while minimizing protocol overhead. Examples of these protocols are SMTP, FTP, and HTTP.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three statements characterize UDP? (Choose three.)</h3>
+<ul>
+<li><span style="color: #cc0000;">UDP provides basic connectionless transport layer functions.</span></li>
+<li>UDP provides connection-oriented, fast transport of data at Layer 3.</li>
+<li><span style="color: #cc0000;">UDP relies on application layer protocols for error detection.</span></li>
+<li><span style="color: #cc0000;">UDP is a low overhead protocol that does not provide sequencing or flow control mechanisms.</span></li>
+<li>UDP relies on IP for error detection and recovery.</li>
+<li>UDP provides sophisticated flow control mechanisms.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>UDP is a simple protocol that provides the basic transport layer functions. It has much lower overhead than TCP because it is not connection-oriented and does not occer the sophisticated retransmission, sequencing, and flow control mechanisms that provide reliability.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which two fields are included in the TCP header but not in the UDP header? (Choose two.)</h3>
+<ul>
+<li><span style="color: #cc0000;">window</span></li>
+<li>checksum</li>
+<li>source port</li>
+<li>destination port</li>
+<li><span style="color: #cc0000;">sequence number</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The sequence number and window fields are included in the TCP header but not in the UDP header.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which field in the TCP header indicates the status of the three-way handshake process?</h3>
+<ul>
+<li>window</li>
+<li>reserved</li>
+<li>checksum</li>
+<li><span style="color: #cc0000;">control bits</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The value in the control bits field of theTCP header indicates the progress and status of the connection.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Why does HTTP use TCP as the transport layer protocol?</h3>
+<ul>
+<li>to ensure the fastest possible download speed</li>
+<li>because HTTP is a best-eccort protocol</li>
+<li>because transmission errors can be tolerated easily</li>
+<li><span style="color: #cc0000;">because HTTP requires reliable delivery</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>When a host requests a web page, transmission reliability and completeness must be guaranteed. Therefore, HTTP uses TCP as its transport layer protocol.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which two types of applications are best suited for UDP? (Choose two.)</h3>
+<ul>
+<li>applications that need data flow control</li>
+<li>applications that require reliable delivery</li>
+<li><span style="color: #cc0000;">applications that handle reliability themselves</span></li>
+<li>applications that need the reordering of segments</li>
+<li><span style="color: #cc0000;">applications that can tolerate some data loss, but require little or no delay</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Applications that can tolerate some data loss, require a simple request and reply, and handle reliability themselves are best suited for UDP. UDP has low overhead and no requirement of reliability. TCP provides services for reliability, controlling data flow, and the reordering of segments.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>How are port numbers used in the TCP/IP encapsulation process?</h3>
+<ul>
+<li>Source port numbers and destination port numbers are not necessary when UDP is the transport layer protocol being used for the communication.</li>
+<li>Source port and destination port numbers are randomly generated.</li>
+<li><span style="color: #cc0000;">If multiple conversations occur that are using the same service, the source port number is used to track the separate conversations.</span></li>
+<li>Destination port numbers are assigned automatically and cannot be changed.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Both UDP and TCP use port numbers to provide a unique identifier for each conversation. Source port numbers are randomly generated and are used to track diccerent conversations. Destination port numbers identify specific services by using either a default port number for the service or a port number that is assigned manually by a system administrator.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>In what two situations would UDP be better than TCP as the preferred transport protocol? (Choose two.)</h3>
+<ul>
+<li>when applications need to guarantee that a packet arrives intact, in sequence, and unduplicated</li>
+<li><span style="color: #cc0000;">when a faster delivery mechanism is needed</span></li>
+<li>when delivery overhead is not an issue</li>
+<li><span style="color: #cc0000;">when applications do not need to guarantee delivery of the data</span></li>
+<li>when destination port numbers are dynamic<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>UDP is a very simple transport layer protocol that does not guarantee delivery. Devices on both ends of the conversation are not required to keep track of the conversation. UDP is used as the transport protocol for applications that need a speedy, best-eccort delivery.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What are three responsibilities of the transport layer? (Choose three.)</h3>
+<ul>
+<li><span style="color: #cc0000;">meeting the reliability requirements of applications, if any </span></li>
+<li><span style="color: #cc0000;">multiplexing multiple communication streams from many users or applications on the same network </span></li>
+<li><span style="color: #cc0000;">identifying the applications and services on the client and server that should handle transmitted data</span></li>
+<li>directing packets towards the destination network</li>
+<li>formatting data into a compatible form for receipt by the destination devices</li>
+<li>conducting error detection of the contents in frames<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The transport layer has several responsibilities. Some of the primary responsibilities include the following:<br />
+Tracking the individual communication streams between applications on the source and destination hosts<br />
+Segmenting data at the source and reassembling the data at the destination<br />
+Identifying the proper application for each communication stream through the use of port numbers<br />
+Multiplexing the communications of multiple users or applications over a single network<br />
+Managing the reliability requirements of applications</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three statements describe a DHCP Discover message? (Choose three.)</h3>
+<ul>
+<li>The source MAC address is 48 ones (cc-cc-cc-cc-cc-cc).</li>
+<li><span style="color: #cc0000;">The destination IP address is 255.255.255.255.</span></li>
+<li>The message comes from a server occering an IP address.</li>
+<li><span style="color: #cc0000;">The message comes from a client seeking an IP address. </span></li>
+<li><span style="color: #cc0000;">All hosts receive the message, but only a DHCP server replies.</span></li>
+<li>Only the DHCP server receives the message.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>When a host configured to use DHCP powers up on a network it sends a DHCPDISCOVER message. cc-cc-cc-cc-cc-cc is the L2 broadcast address. A DHCP server replies with a unicast DHCPOccER message back to the host.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which two protocols may devices use in the application process that sends email? (Choose two.)</h3>
+<ul>
+<li>HTTP</li>
+<li><span style="color: #cc0000;">SMTP</span></li>
+<li>POP</li>
+<li>IMAP</li>
+<li><span style="color: #cc0000;">DNS</span></li>
+<li>POP3<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>POP, POP3, and IMAP are protocols that are used to retrieve email from servers. SMTP is the default protocol that is used to send email. DNS may be used by the sender email server to find the address of the destination email server.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is true about the Server Message Block protocol?</h3>
+<ul>
+<li>Diccerent SMB message types have a diccerent format.</li>
+<li><span style="color: #cc0000;">Clients establish a long term connection to servers.</span></li>
+<li>SMB messages cannot authenticate a session.</li>
+<li>SMB uses the FTP protocol for communication.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The Server Message Block protocol is a protocol for file, printer, and directory sharing. Clients establish a long term connection to servers and when the connection is active, the resources can be accessed. Every SMB message has the same format. The use of SMB diccers from FTP mainly in the length of the sessions. SMB messages can authenticate sessions.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is the function of the HTTP GET message?</h3>
+<ul>
+<li><span style="color: #cc0000;">to request an HTML page from a web server</span></li>
+<li>to send error information from a web server to a web client</li>
+<li>to upload content to a web server from a web client</li>
+<li>to retrieve client email from an email server using TCP port 110<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>There are three common HTTP message types:GET &#8211; used by clients to request data from the web server<br />
+POST &#8211; used by clients to upload data to a web server<br />
+PUT &#8211; used by clients to upload data to a web server</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which OSI layer provides the interface between the applications used to communicate and the underlying network over which messages are transmitted?</h3>
+<ul>
+<li><span style="color: #cc0000;">application</span></li>
+<li>presentation</li>
+<li>session</li>
+<li>transport<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The application layer is the layer that is closest to the end user and provides the interface between the underlying network and the applications used to communicate.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which networking model is being used when an author uploads one chapter document to a file server of a book publisher?</h3>
+<ul>
+<li>peer-to-peer</li>
+<li>master-slave</li>
+<li><span style="color: #cc0000;">client/server</span></li>
+<li>point-to-point<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>In the client/server network model, a network device assumes the role of server in order to provide a particular service such as file transfer and storage. In the client/server network model, a dedicated server does not have to be used, but if one is present, the network model being used is the client/server model. In contrast, a peer-to-peer network does not have a dedicated server.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What do the client/server and peer-to-peer network models have in common?</h3>
+<ul>
+<li>Both models have dedicated servers.</li>
+<li><span style="color: #cc0000;">Both models support devices in server and client roles.</span></li>
+<li>Both models require the use of TCP/IP-based protocols.</li>
+<li>Both models are used only in the wired network environment.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>In both the client/server and peer-to-peer network models, clients and servers exist. In peer-to-peer networks, no dedicated server exists, but a device can assume the server role to provide information to a device serving in the client role.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>In what networking model would eDonkey, eMule, BitTorrent, Bitcoin, and LionShare be used?</h3>
+<ul>
+<li><span style="color: #cc0000;">peer-to-peer</span></li>
+<li>client-based</li>
+<li>master-slave</li>
+<li>point-to-point<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>In a peer-to-peer networking model, data is exchanged between two network devices without the use of a dedicated server. Peer-to-peer applications such as Shareaz, eDonkey, and Bitcoin allow one network device to assume the role of server, while one or more other network devices assume the role of client using the peer-to-peer application.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is a common protocol that is used with peer-to-peer applications such as WireShare, Bearshare, and Shareaza?</h3>
+<ul>
+<li>Ethernet</li>
+<li><span style="color: #cc0000;">Gnutella</span></li>
+<li>POP</li>
+<li>SMTP<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The Gnutella protocol is used when one user shares an entire file with another user. A person would load a Gnutella-based application such as gtk-gnutella or WireShare and use that application to locate and access resources shared by others.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is a key characteristic of the peer-to-peer networking model?</h3>
+<ul>
+<li>wireless networking</li>
+<li>social networking without the Internet</li>
+<li>network printing using a print server</li>
+<li><span style="color: #cc0000;">resource sharing without a dedicated server</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The peer-to-peer (P2P) networking model allows data, printer, and resource sharing without a dedicated server.​​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>The application layer of the TCP/IP model performs the functions of what three layers of the OSI model? (Choose three.)</h3>
+<ul>
+<li>physical</li>
+<li><span style="color: #cc0000;">session</span></li>
+<li>network</li>
+<li><span style="color: #cc0000;">presentation</span></li>
+<li>data link</li>
+<li>transport</li>
+<li><span style="color: #cc0000;">application</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The network access layer of the TCP/IP model performs the same functions as the physical and data link layers of the OSI model. The internetwork layer equates to the network layer of the OSI model. The transport layers are the same in both models. The application layer of the TCP/IP model represents the session, presentation, and application layers of the OSI model.​</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is an example of network communication that uses the client-server model?</h3>
+<ul>
+<li>A user uses eMule to download a file that is shared by a friend after the file location is determined.</li>
+<li>A workstation initiates an ARP to find the MAC address of a receiving host.</li>
+<li>A user prints a document by using a printer that is attached to a workstation of a coworker.</li>
+<li><span style="color: #cc0000;">A workstation initiates a DNS request when the user types www.cisco.com in the address bar of a web browser.</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>When a user types a domain name of a website into the address bar of a web browser, a workstation needs to send a DNS request to the DNS server for the name resolution process. This request is a client/server model application. The eMule application is P2P. Sharing a printer on a workstation is a peer-to-peer network. Using ARP is just a broadcast message sent by a host.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which layer in the TCP/IP model is used for formatting, compressing, and encrypting data?</h3>
+<ul>
+<li>internetwork</li>
+<li>session</li>
+<li>presentation</li>
+<li><span style="color: #cc0000;">application</span></li>
+<li>network access<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The application layer of the TCP/IP model performs the functions of three layers of the OSI model &#8211; application, presentation, and session. The application layer of the TCP/IP model is the layer that provides the interface between the applications, is responsible for formatting, compressing, and encrypting data, and is used to create and maintain dialogs between source and destination applications.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What is an advantage of SMB over FTP?​</h3>
+<ul>
+<li>Only with SMB can data transfers occur in both directions.</li>
+<li>Only SMB establishes two simultaneous connections with the client, making the data transfer faster.​</li>
+<li>SMB is more reliable than FTP because SMB uses TCP and FTP uses UDP.​</li>
+<li><span style="color: #cc0000;">SMB clients can establish a long-term connection to the server.​</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>SMB and FTP are client/server protocols that are used for file transfer. SMB allows the connecting device to access resources as if they were on the local client device. SMB and FTP use the TCP protocol for connection establishment and they can transfer data in both directions. FTP requires two connections between the client and the server, one for commands and replies, the other for the actual file transfer.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A manufacturing company subscribes to certain hosted services from its ISP. The services that are required include hosted world wide web, file transfer, and e-mail. Which protocols represent these three key applications? (Choose three.)</h3>
+<ul>
+<li><span style="color: #cc0000;">FTP</span></li>
+<li><span style="color: #cc0000;">HTTP</span></li>
+<li>DNS</li>
+<li>SNMP</li>
+<li>DHCP</li>
+<li><span style="color: #cc0000;">SMTP</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The ISP uses the HTTP protocol in conjunction with hosting web pages, the FTP protocol with file transfers, and SMTP with e-mail. DNS is used to translate domain names to IP addresses. SNMP is used for network management traccic. DHCP ic commonly used to manage IP addressing.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which application layer protocol uses message types such as GET, PUT, and POST?</h3>
+<ul>
+<li>DNS</li>
+<li>DHCP</li>
+<li>SMTP</li>
+<li><span style="color: #cc0000;">HTTP</span></li>
+<li>POP3<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The GET command is a client request for data from a web server. A PUT command uploads resources and content, such as images, to a web server. A POST command uploads data files to a web server.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What type of information is contained in a DNS MX record?</h3>
+<ul>
+<li>the FQDN of the alias used to identify a service</li>
+<li>the IP address for an FQDN entry</li>
+<li><span style="color: #cc0000;">the domain name mapped to mail exchange servers</span></li>
+<li>the IP address of an authoritative name server<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>MX, or mail exchange messages, are used to map a domain name to several mail exchange servers that all belong to the same domain.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three protocols operate at the application layer of the TCP/IP model? (Choose three.)</h3>
+<ul>
+<li>ARP</li>
+<li>TCP</li>
+<li>UDP</li>
+<li><span style="color: #cc0000;">FTP </span></li>
+<li><span style="color: #cc0000;">POP3 </span></li>
+<li><span style="color: #cc0000;">DHCP</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>FTP, DHCP, and POP3 are application layer protocols. TCP and UDP are transport layer protocols. ARP is a network layer protocol.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which protocol is used by a client to communicate securely with a web server?</h3>
+<ul>
+<li>SMTP</li>
+<li>SMB</li>
+<li>IMAP</li>
+<li><span style="color: #cc0000;">HTTPS</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>HTTPS is a secure form of HTTP used to access web content hosted by a web server.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which applications or services allow hosts to act as client and server at the same time?</h3>
+<ul>
+<li>client/server applications</li>
+<li>email applications</li>
+<li><span style="color: #cc0000;">P2P applications</span></li>
+<li>authentication services<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>P2P applications allow the clients to behave as servers if needed. When using authentication services, email exchange, and client/server applications, one host acts as server and the other acts as client at all times.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>What are two characteristics of peer-to-peer networks? (Choose two.)</h3>
+<ul>
+<li>scalability</li>
+<li>one way data flow</li>
+<li><span style="color: #cc0000;">decentralized resources</span></li>
+<li>centralized user accounts</li>
+<li><span style="color: #cc0000;">resource sharing without a dedicated server</span><br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>Peer-to-peer networks have decentralized resources because every computer can serve as both a server and a client. One computer might assume the role of server for one transaction while acting as a client for another transaction. Peer-to-peer networks can share resources among network devices without the use of a dedicated server.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which scenario describes a function provided by the transport layer?</h3>
+<ul>
+<li>A student is using a classroom VoIP phone to call home. The unique identifier burned into the phone is a transport layer address used to contact another network device on the same network.</li>
+<li>A student is playing a short web-based movie with sound. The movie and sound are encoded within the transport layer header.</li>
+<li><span style="color: #cc0000;">A student has two web browser windows open in order to access two web sites. The transport layer ensures the correct web page is delivered to the correct browser window.</span></li>
+<li>A corporate worker is accessing a web server located on a corporate network. The transport layer formats the screen so the web page appears properly no matter what device is being used to view the web site.<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The source and destination port numbers are used to identify the correct application and window within that application.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>Which three layers of the OSI model provide similar network services to those provided by the application layer of the TCP/IP model? (Choose three.)</h3>
+<ul>
+<li>physical layer</li>
+<li><span style="color: #cc0000;">session layer</span></li>
+<li>transport layer</li>
+<li><span style="color: #cc0000;">application layer </span></li>
+<li><span style="color: #cc0000;">presentation layer</span></li>
+<li>data link layer<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Answers Explanation &amp; Hints:</b></p>
+<p>The three upper layers of the OSI model, the session, presentation, and application layers, provide application services similar to those provided by the TCP/IP model application layer. Lower layers of the OSI model are more concerned with data flow.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received two packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">3001</span></li>
+<li>6001</li>
+<li>4500</li>
+<li>6000<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP (Transmission Control Protocol), the window size determines the amount of data (in bytes) that can be sent before requiring an acknowledgment. Each packet acknowledgment in TCP is cumulative and indicates the next expected byte.</p>
+<p>Given that the packet size is 1,500 bytes, after two packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">2×1,500=3,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">2</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">3</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>TCP acknowledgments are typically for the next expected byte. So, after successfully receiving 3,000 bytes, the next expected byte would be byte number 3001.</p>
+<p>Therefore, the web server would acknowledge byte number <strong>3001</strong> after it has received two packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received three packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">4501</span></li>
+<li>6001</li>
+<li>6000</li>
+<li>4500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP communication, acknowledgments are sent for the next expected byte. If the packet size is 1,500 bytes, after three packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">3×1,500=4,500</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">3</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">4</span><span class="mpunct">,</span><span class="mord">500</span></span></span></span></span> bytes.</p>
+<p>Since TCP acknowledgments are for the next byte that is expected, after receiving 4,500 bytes, the acknowledgment would be for the next byte, which is byte number 4501.</p>
+<p>Therefore, after receiving three packets of data from the PC, the web server will acknowledge byte number <strong>4501</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received four packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">6001</span></li>
+<li>3001</li>
+<li>1501</li>
+<li>1500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In a TCP (Transmission Control Protocol) communication, the acknowledgment number that is sent by a receiver (in this case, the web server) indicates the next expected byte from the sender (the PC).</p>
+<p>Given that each packet size is 1,500 bytes, after four packets, the total number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">4×1,500=6,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">4</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">6</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>The acknowledgment sent by the receiver is for the next byte that it expects to receive. So, after successfully receiving 6,000 bytes, the next expected byte would be byte number 6,001.</p>
+<p>Therefore, the web server will acknowledge byte number <strong>6001</strong> after it has received four packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received four packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">6001</span></li>
+<li>3001</li>
+<li>3000</li>
+<li>1500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In a TCP (Transmission Control Protocol) communication, the acknowledgment number that is sent by a receiver (in this case, the web server) indicates the next expected byte from the sender (the PC).</p>
+<p>Given that each packet size is 1,500 bytes, after four packets, the total number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">4×1,500=6,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">4</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">6</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>The acknowledgment sent by the receiver is for the next byte that it expects to receive. So, after successfully receiving 6,000 bytes, the next expected byte would be byte number 6,001.</p>
+<p>Therefore, the web server will acknowledge byte number <strong>6001</strong> after it has received four packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received two packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">3001</span></li>
+<li>4501</li>
+<li>3000</li>
+<li>1500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP (Transmission Control Protocol), the window size determines the amount of data (in bytes) that can be sent before requiring an acknowledgment. Each packet acknowledgment in TCP is cumulative and indicates the next expected byte.</p>
+<p>Given that the packet size is 1,500 bytes, after two packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">2×1,500=3,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">2</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">3</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>TCP acknowledgments are typically for the next expected byte. So, after successfully receiving 3,000 bytes, the next expected byte would be byte number 3001.</p>
+<p>Therefore, the web server would acknowledge byte number <strong>3001</strong> after it has received two packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received two packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">3001</span></li>
+<li>4501</li>
+<li>4500</li>
+<li>1500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP (Transmission Control Protocol), the window size determines the amount of data (in bytes) that can be sent before requiring an acknowledgment. Each packet acknowledgment in TCP is cumulative and indicates the next expected byte.</p>
+<p>Given that the packet size is 1,500 bytes, after two packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">2×1,500=3,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">2</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">3</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>TCP acknowledgments are typically for the next expected byte. So, after successfully receiving 3,000 bytes, the next expected byte would be byte number 3001.</p>
+<p>Therefore, the web server would acknowledge byte number <strong>3001</strong> after it has received two packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received two packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">3001</span></li>
+<li>6001</li>
+<li>4500</li>
+<li>3000<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP (Transmission Control Protocol), the window size determines the amount of data (in bytes) that can be sent before requiring an acknowledgment. Each packet acknowledgment in TCP is cumulative and indicates the next expected byte.</p>
+<p>Given that the packet size is 1,500 bytes, after two packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">2×1,500=3,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">2</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">3</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>TCP acknowledgments are typically for the next expected byte. So, after successfully receiving 3,000 bytes, the next expected byte would be byte number 3001.</p>
+<p>Therefore, the web server would acknowledge byte number <strong>3001</strong> after it has received two packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received two packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">3001</span></li>
+<li>6001</li>
+<li>6000</li>
+<li>3000<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP (Transmission Control Protocol), the window size determines the amount of data (in bytes) that can be sent before requiring an acknowledgment. Each packet acknowledgment in TCP is cumulative and indicates the next expected byte.</p>
+<p>Given that the packet size is 1,500 bytes, after two packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">2×1,500=3,000</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">2</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">3</span><span class="mpunct">,</span><span class="mord">000</span></span></span></span></span> bytes.</p>
+<p>TCP acknowledgments are typically for the next expected byte. So, after successfully receiving 3,000 bytes, the next expected byte would be byte number 3001.</p>
+<p>Therefore, the web server would acknowledge byte number <strong>3001</strong> after it has received two packets of data from the PC.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received three packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">4501</span></li>
+<li>6001</li>
+<li>6000</li>
+<li>3000<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP communication, acknowledgments are sent for the next expected byte. If the packet size is 1,500 bytes, after three packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">3×1,500=4,500</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">3</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">4</span><span class="mpunct">,</span><span class="mord">500</span></span></span></span></span> bytes.</p>
+<p>Since TCP acknowledgments are for the next byte that is expected, after receiving 4,500 bytes, the acknowledgment would be for the next byte, which is byte number 4501.</p>
+<p>Therefore, after receiving three packets of data from the PC, the web server will acknowledge byte number <strong>4501</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A PC that is communicating with a web server has a TCP window size of 6,000 bytes when sending data and a packet size of 1,500 bytes. Which byte of information will the web server acknowledge after it has received three packets of data from the PC?</h3>
+<ul>
+<li><span style="color: #cc0000;">4501</span></li>
+<li>6001</li>
+<li>1500</li>
+<li>4500<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>In TCP communication, acknowledgments are sent for the next expected byte. If the packet size is 1,500 bytes, after three packets, the number of bytes sent would be <span class="math math-inline"><span class="katex"><span class="katex-mathml">3×1,500=4,500</span><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord">3</span><span class="mbin">×</span></span><span class="base"><span class="mord">1</span><span class="mpunct">,</span><span class="mord">500</span><span class="mrel">=</span></span><span class="base"><span class="mord">4</span><span class="mpunct">,</span><span class="mord">500</span></span></span></span></span> bytes.</p>
+<p>Since TCP acknowledgments are for the next byte that is expected, after receiving 4,500 bytes, the acknowledgment would be for the next byte, which is byte number 4501.</p>
+<p>Therefore, after receiving three packets of data from the PC, the web server will acknowledge byte number <strong>4501</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting TFTP service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">69</span></li>
+<li>67</li>
+<li>53</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>The Trivial File Transfer Protocol (TFTP) uses UDP (User Datagram Protocol) as its transport protocol. The well-known port number for TFTP is 69. This is the port that clients use to initiate a connection with a TFTP server.</p>
+<p>So, when a client creates a packet to send to a server requesting TFTP service, the destination port number used in the sending packet will be <strong>69</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting FTP service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">21</span></li>
+<li>69</li>
+<li>67</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>FTP, or File Transfer Protocol, typically uses port 21 for control commands. This is the port that clients use to initiate a connection with an FTP server for sending commands and managing the transfer process.</p>
+<p>So, when a client creates a packet to send to a server requesting FTP service, the destination port number used in the sending packet will be <strong>21</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting SSH service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">22</span></li>
+<li>69</li>
+<li>67</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>SSH, or Secure Shell, typically uses port 22. This is the port that clients use to initiate a secure connection with a server for secure data communication, remote command-line login, remote command execution, and other secure network services.</p>
+<p>So, when a client creates a packet to send to a server requesting SSH service, the destination port number used in the sending packet will be <strong>22</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting HTTP service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">80</span></li>
+<li>67</li>
+<li>53</li>
+<li>69<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>HTTP, or HyperText Transfer Protocol, typically uses port 80. This is the standard port used by web browsers and servers for HTTP communication, which is the foundation of data communication for the World Wide Web.</p>
+<p>So, when a client creates a packet to send to a server requesting HTTP service, the destination port number used in the sending packet will be <strong>80</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting POP3 service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">110</span></li>
+<li>67</li>
+<li>53</li>
+<li>69<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>POP3, or Post Occice Protocol version 3, typically uses port 110. This protocol is used by email clients to retrieve emails from a server.</p>
+<p>So, when a client creates a packet to send to a server requesting POP3 service, the destination port number used in the sending packet will be <strong>110</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting telnet service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">23</span></li>
+<li>443</li>
+<li>161</li>
+<li>110<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>Telnet, a protocol used for accessing remote computers, typically uses port 23. This port is the standard TCP port for telnet connections and is used for telnet sessions that involve a user connecting to a remote host or server.</p>
+<p>So, when a client creates a packet to send to a server requesting telnet service, the destination port number used in the sending packet will be <strong>23</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting POP3 service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">110</span></li>
+<li>443</li>
+<li>161</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>POP3, or Post Occice Protocol version 3, typically uses port 110. This protocol is used by email clients to retrieve emails from a server.</p>
+<p>So, when a client creates a packet to send to a server requesting POP3 service, the destination port number used in the sending packet will be <strong>110</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting SNMP service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">161</span></li>
+<li>443</li>
+<li>110</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>SNMP, or Simple Network Management Protocol, typically uses port 161 for general SNMP messages. This protocol is used for the management and monitoring of networked devices.</p>
+<p>So, when a client creates a packet to send to a server requesting SNMP service, the destination port number used in the sending packet will be <strong>161</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting SMTP service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">25</span></li>
+<li>443</li>
+<li>161</li>
+<li>110<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>SMTP, or Simple Mail Transfer Protocol, typically uses port 25. This protocol is used for sending emails from a client to a server or between servers.</p>
+<p>So, when a client creates a packet to send to a server requesting SMTP service, the destination port number used in the sending packet will be <strong>25</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li>
+<h3>A client creates a packet to send to a server. The client is requesting HTTPS service. What number will be used as the destination port number in the sending packet?</h3>
+<ul>
+<li><span style="color: #cc0000;">443</span></li>
+<li>161</li>
+<li>110</li>
+<li>80<br />
+<table>
+<tbody>
+<tr bgcolor="#e7f7e1">
+<td><b>Explanation &amp; Hint:</b></p>
+<p>HTTPS, or Hypertext Transfer Protocol Secure, typically uses port 443. This protocol is used for secure communication over a computer network within a web browser, using encryption to ensure privacy and security.</p>
+<p>So, when a client creates a packet to send to a server requesting HTTPS service, the destination port number used in the sending packet will be <strong>443</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+</ol>
+  </div>
+
+  <script>
+    const bank = document.getElementById('bank');
+
+    const qEl = document.getElementById('question');
+    const choicesEl = document.getElementById('choices');
+    const explEl = document.getElementById('explanation');
+
+    const statusEl = document.getElementById('status');
+    const counterEl = document.getElementById('counter');
+
+    const retakeBtn = document.getElementById('retakeBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // For multi-answer questions
+    const checkBtn = document.createElement('button');
+    checkBtn.id = 'checkBtn';
+    checkBtn.type = 'button';
+    checkBtn.textContent = 'Check';
+    // Insert after Prev, before Next
+    document.querySelector('.topbar').insertBefore(checkBtn, nextBtn);
+
+    let quiz = [];
+    let idx = 0;
+
+    // answered: qIndex -> { selected: number[] , correct: boolean }
+    const answered = new Map();
+
+    function cleanText(s) {
+      return (s || '').replace(/\s+/g, ' ').trim();
+    }
+
+    function shuffledOrder(n) {
+      const order = Array.from({ length: n }, (_, i) => i);
+      for (let i = n - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      return order;
+    }
+
+
+    function stripTablesAndNormalize(node) {
+      const clone = node.cloneNode(true);
+      clone.querySelectorAll('table, figure, img, noscript, figcaption').forEach(x => x.remove());
+      clone.querySelectorAll('br').forEach(b => b.remove());
+      clone.querySelectorAll('span').forEach(sp => sp.replaceWith(document.createTextNode(sp.textContent)));
+      return cleanText(clone.textContent);
+    }
+
+
+    function extractExplanation(qLi) {
+      const td = qLi.querySelector('table td');
+      if (!td) return '';
+      let t = cleanText(td.textContent);
+      t = t.replace(/^Answers Explanation\s*&\s*Hints:\s*/i, '');
+      t = t.replace(/^Explanation\s*&\s*Hint:\s*/i, '');
+      return t;
+    }
+
+    function isCorrectChoice(li) {
+      // look for a span with a color style that is not inside a table
+      const spans = Array.from(li.querySelectorAll('span'));
+      for (const sp of spans) {
+        if (sp.closest('table')) continue;
+        const style = (sp.getAttribute('style') || '').toLowerCase();
+        if (style.includes('color')) return true;
+      }
+      return false;
+    }
+
+
+    function parseBank() {
+      const items = [];
+      const qLis = bank.querySelectorAll('ol > li');
+
+      qLis.forEach(qLi => {
+        const h3 = qLi.querySelector('h3');
+        const ul = qLi.querySelector('ul');
+        if (!h3 || !ul) return;
+
+        const qText = cleanText(h3.textContent);
+
+        const answerLisAll = Array.from(ul.querySelectorAll(':scope > li'));
+        if (answerLisAll.length < 2) return;
+
+        // Build answer entries, skipping li that become empty after stripping
+        const entries = [];
+        for (const li of answerLisAll) {
+          const text = stripTablesAndNormalize(li);
+          const hasTable = !!li.querySelector('table');
+
+          // If stripping leaves nothing, treat it as non-answer noise (often explanation-only)
+          if (!text) continue;
+
+          entries.push({
+            text,
+            correct: isCorrectChoice(li),
+            hasTable
+          });
+        }
+
+        if (entries.length < 2) return;
+
+        const answers = entries.map(e => e.text);
+        const correctIndexes = entries
+          .map((e, i) => (e.correct ? i : -1))
+          .filter(i => i >= 0);
+
+        const explanation = extractExplanation(qLi);
+
+        const multi = /\(choose\s+\w+/i.test(qText) || correctIndexes.length > 1;
+
+        items.push({
+          question: qText,
+          answers,
+          correctIndexes,
+          explanation,
+          multi
+        });
+      });
+
+      return items;
+    }
+
+
+    function setQuestionState(correctOrWrong) {
+      qEl.classList.remove('correct', 'wrong');
+      if (correctOrWrong === true) qEl.classList.add('correct');
+      if (correctOrWrong === false) qEl.classList.add('wrong');
+    }
+
+    function updateTopbar() {
+      const total = quiz.length;
+      let correctCount = 0;
+      for (const v of answered.values()) if (v.correct) correctCount++;
+
+      statusEl.textContent = `Score: ${correctCount} / ${total}`;
+      counterEl.textContent = `Question ${idx + 1} of ${total}`;
+
+      prevBtn.disabled = (idx === 0);
+
+      const isAnswered = answered.has(idx);
+      // Next enabled only if answered and not last question
+      nextBtn.disabled = !(isAnswered && idx < total - 1);
+
+      // Check button only used for multi-answer questions when not answered
+      const item = quiz[idx];
+      checkBtn.style.display = item?.multi ? 'inline-block' : 'none';
+      checkBtn.disabled = isAnswered;
+    }
+
+    function arraysEqualAsSets(a, b) {
+      if (a.length !== b.length) return false;
+      const sa = new Set(a);
+      const sb = new Set(b);
+      if (sa.size !== sb.size) return false;
+      for (const x of sa) if (!sb.has(x)) return false;
+      return true;
+    }
+
+
+function render() {
+  const item = quiz[idx];
+  if (!item) return;
+
+  // Stable shuffle per question (won’t reshuffle on re-render)
+  if (!item.order) {
+    item.order = shuffledOrder(item.answers.length);
+  }
+  const order = item.order;
+
+  qEl.textContent = item.question;
+  explEl.className = 'explanation';
+  explEl.textContent = '';
+
+  choicesEl.innerHTML = '';
+
+  const a = answered.get(idx);
+  setQuestionState(a ? a.correct : null);
+
+  if (item.multi) {
+    // Multi-answer: checkboxes + explicit "Check" button
+    const selected = new Set(a?.selected || []);
+
+    order.forEach((origIndex) => {
+      const ans = item.answers[origIndex];
+
+      const label = document.createElement('label');
+      label.className = 'choice';
+
+      const input = document.createElement('input');
+      input.type = 'checkbox';
+      input.checked = selected.has(origIndex);
+      input.disabled = !!a;
+      input.style.marginRight = '10px';
+
+      input.addEventListener('change', () => {
+        if (answered.has(idx)) return;
+        if (input.checked) selected.add(origIndex);
+        else selected.delete(origIndex);
+      });
+
+      label.appendChild(input);
+      label.appendChild(document.createTextNode(ans));
+      choicesEl.appendChild(label);
+    });
+
+    checkBtn.onclick = () => {
+      if (answered.has(idx)) return;
+
+      const chosen = Array.from(selected).sort((x, y) => x - y);
+      const correct = arraysEqualAsSets(
+        chosen,
+        item.correctIndexes.slice().sort((x, y) => x - y)
+      );
+
+      answered.set(idx, { selected: chosen, correct });
+
+      if (!correct && item.explanation) {
+        explEl.textContent = item.explanation;
+        explEl.classList.add('show');
+      }
+
+      render();
+    };
+
+    // If already answered, colorize choices and show explanation only if wrong
+    if (a) {
+      const correctSet = new Set(item.correctIndexes);
+      const selSet = new Set(a.selected);
+
+      // children are in *display* order; map display -> orig with `order`
+      Array.from(choicesEl.children).forEach((label, displayPos) => {
+        const origIndex = order[displayPos];
+
+        if (correctSet.has(origIndex)) label.classList.add('correct');
+        if (selSet.has(origIndex) && !correctSet.has(origIndex)) label.classList.add('wrong');
+      });
+
+      if (!a.correct && item.explanation) {
+        explEl.textContent = item.explanation;
+        explEl.classList.add('show');
+      }
+    }
+
+  } else {
+    // Single-answer: click to lock in (shuffled)
+    order.forEach((origIndex) => {
+      const ans = item.answers[origIndex];
+
+      const div = document.createElement('div');
+      div.className = 'choice';
+      div.textContent = ans;
+
+      if (a) {
+        if (item.correctIndexes.includes(origIndex)) div.classList.add('correct');
+        if (a.selected[0] === origIndex && !a.correct) div.classList.add('wrong');
+      }
+
+      div.addEventListener('click', () => {
+        if (answered.has(idx)) return;
+
+        const correct = item.correctIndexes.includes(origIndex);
+        answered.set(idx, { selected: [origIndex], correct });
+
+        if (!correct && item.explanation) {
+          explEl.textContent = item.explanation;
+          explEl.classList.add('show');
+        }
+
+        render();
+      });
+
+      choicesEl.appendChild(div);
+    });
+
+    if (a && !a.correct && item.explanation) {
+      explEl.textContent = item.explanation;
+      explEl.classList.add('show');
+    }
+  }
+
+  updateTopbar();
+}
+
+
+    function retake() {
+      quiz.forEach(q => delete q.order);
+      answered.clear();
+      idx = 0;
+      render();
+    }
+
+    function next() {
+      if (!answered.has(idx)) return;
+      if (idx < quiz.length - 1) {
+        idx++;
+        render();
+      }
+    }
+
+    function prev() {
+      if (idx > 0) {
+        idx--;
+        render();
+      }
+    }
+
+    // Init
+    quiz = parseBank();
+    if (quiz.length === 0) {
+      qEl.textContent = 'No questions parsed. Paste your HTML into #bank under an <ol>...';
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      checkBtn.disabled = true;
+    } else {
+      render();
+    }
+
+    retakeBtn.addEventListener('click', retake);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+  </script>
+</body>
+</html>

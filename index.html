@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; min-height: 100vh; display: grid; place-items: center; }
+    .card { width: min(420px, 92vw); border: 1px solid #ddd; border-radius: 14px; padding: 18px; }
+    label { display:block; margin: 10px 0 6px; font-weight: 600; }
+    input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #ccc; }
+    button { margin-top: 12px; width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #ccc; background:#fff; cursor:pointer; }
+    .err { margin-top: 10px; color: #b00020; display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 style="margin:0 0 8px;">Quiz Login</h2>
+
+    <form id="loginForm">
+      <label for="user">User</label>
+      <input id="user" autocomplete="username" />
+
+      <label for="pw">Password</label>
+      <input id="pw" type="password" autocomplete="current-password" />
+
+      <button type="submit">Enter</button>
+      <div class="err" id="err">Wrong user/password.</div>
+    </form>
+  </div>
+
+  <script>
+    // Soft gate only (static site). Change these:
+    const USER = "concsp";
+    const PASS = "kld!0495";
+
+    if (localStorage.getItem("quiz_authed") === "1") {
+      location.href = "./app/mod-final.html"; // or a hub page if you add one
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const u = document.getElementById("user").value.trim();
+      const p = document.getElementById("pw").value;
+
+      if (u === USER && p === PASS) {
+        localStorage.setItem("quiz_authed", "1");
+        location.href = "./app/mod-final.html";
+      } else {
+        document.getElementById("err").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
