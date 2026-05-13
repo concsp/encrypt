@@ -1,34 +1,117 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Practice Quiz</title>
 
   <style>
-    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.35; }
-    #bank { display: none; }
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      margin: 24px;
+      line-height: 1.35;
+    }
 
-    .topbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
-    button { padding: 8px 12px; border-radius: 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
-    button:disabled { opacity: 0.5; cursor: not-allowed; }
-    .status { margin-left: auto; font-weight: 600; }
+    #bank {
+      display: none;
+    }
 
-    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
-    .q { font-weight: 700; margin-bottom: 12px; padding: 10px; border-radius: 10px; border: 1px solid #eee; }
-    .q.correct { border-color: #1a7f37; background: #eaffef; }
-    .q.wrong { border-color: #d1242f; background: #ffecec; }
+    .topbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 14px;
+    }
 
-    .choice { display: block; padding: 10px 12px; border-radius: 10px; border: 1px solid #eee; margin: 10px 0; cursor: pointer; user-select: none; }
-    .choice:hover { border-color: #bbb; }
-    .choice.correct { border-color: #1a7f37; background: #eaffef; }
-    .choice.wrong { border-color: #d1242f; background: #ffecec; }
+    button {
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+    }
 
-    .explanation { margin-top: 12px; padding: 12px; border-radius: 10px; background: #f6f8fa; display: none; }
-    .explanation.show { display: block; }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
 
-    .footer { display: flex; gap: 10px; margin-top: 14px; }
-    .counter { margin-left: auto; opacity: 0.8; }
+    .status {
+      margin-left: auto;
+      font-weight: 600;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .q {
+      font-weight: 700;
+      margin-bottom: 12px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+    }
+
+    .q.correct {
+      border-color: #1a7f37;
+      background: #eaffef;
+    }
+
+    .q.wrong {
+      border-color: #d1242f;
+      background: #ffecec;
+    }
+
+    .choice {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      margin: 10px 0;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .choice:hover {
+      border-color: #bbb;
+    }
+
+    .choice.correct {
+      border-color: #1a7f37;
+      background: #eaffef;
+    }
+
+    .choice.wrong {
+      border-color: #d1242f;
+      background: #ffecec;
+    }
+
+    .explanation {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #f6f8fa;
+      display: none;
+    }
+
+    .explanation.show {
+      display: block;
+    }
+
+    .footer {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .counter {
+      margin-left: auto;
+      opacity: 0.8;
+    }
 
     /* NAVBAR */
 
@@ -117,1354 +200,1658 @@
 
   <!-- ======= YOUR SOURCE HTML BANK (paste as-is) ======= -->
   <div id="bank">
-<h2>ITN (Version 7.00) &#8211; Building and Securing a Small Network Exam Answers 2025 Full 100%</h2>
-<ol>
-<li>
-<h3>Which example of malicious code would be classified as a Trojan horse?</h3>
-<ul>
-<li><span style="color: #cc0000;">malware that was written to look like a video game</span></li>
-<li>malware that requires manual user intervention to spread between systems</li>
-<li>malware that attaches itself to a legitimate program and spreads to other programs when launched</li>
-<li>malware that can automatically spread from one system to another by exploiting a vulnerability in the target<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>A Trojan horse is malicious code that has been written specifically to look like a legitimate program. This is in contrast to a virus, which simply attaches itself to an actual legitimate program. Viruses require manual intervention from a user to spread from one system to another, while a worm is able to spread automatically between systems by exploiting vulnerabilities on those devices.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is the diccerence between a virus and a worm?</h3>
-<ul>
-<li>Viruses self-replicate but worms do not.</li>
-<li><span style="color: #cc0000;">Worms self-replicate but viruses do not.</span></li>
-<li>Worms require a host file but viruses do not.</li>
-<li>Viruses hide in legitimate programs but worms do not.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Worms are able to self-replicate and exploit vulnerabilities on computer networks without user participation.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which attack involves a compromise of data that occurs between two end points?</h3>
-<ul>
-<li>denial-of-service</li>
-<li><span style="color: #cc0000;">man-in-the-middle attack</span></li>
-<li>extraction of security parameters</li>
-<li>username enumeration<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Threat actors frequently attempt to access devices over the internet through communication protocols. Some of the most popular remote exploits are as follows: Man-In-the-middle attack (MITM) – The threat actor gets between devices in the system and intercepts all of the data being transmitted. This information could simply be collected or modified for a specific purpose and delivered to its original destination.<br />
-Eavesdropping attack – When devices are being installed, the threat actor can intercept data such as security keys that are used by constrained devices to establish communications once they are up and running.<br />
-SQL injection (SQLi) – Threat actors uses a flaw in the Structured Query Language (SQL) application that allows them to have access to modify the data or gain administrative privileges.<br />
-Routing attack – A threat actor could either place a rogue routing device on the network or modify routing packets to manipulate routers to send all packets to the chosen destination of the threat actor. The threat actor could then drop specific packets, known as selective forwarding, or drop all packets, known as a sinkhole attack.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which type of attack involves an adversary attempting to gather information about a network to identify vulnerabilities?</h3>
-<ul>
-<li><span style="color: #cc0000;">reconnaissance</span></li>
-<li>DoS</li>
-<li>dictionary</li>
-<li>man-in-the-middle<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Reconnaissance is a type of attack where the intruder is looking for wireless network vulnerabilities.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Match each weakness with an example. (Not all options are used.)</h3>
-<figure id="attachment_257" aria-describedby="caption-attachment-257" style="width: 1914px" class="wp-caption alignnone"><img fetchpriority="high" decoding="async" class="size-full wp-image-257" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201914%20976'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 001" width="1914" height="976" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1.jpg 1914w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-300x153.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-1024x522.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-768x392.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-1536x783.jpg 1536w" data-lazy-sizes="(max-width: 1914px) 100vw, 1914px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1.jpg" /><noscript><img fetchpriority="high" decoding="async" class="size-full wp-image-257" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1.jpg" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 001" width="1914" height="976" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1.jpg 1914w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-300x153.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-1024x522.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-768x392.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-001-1-1536x783.jpg 1536w" sizes="(max-width: 1914px) 100vw, 1914px" /></noscript><figcaption id="caption-attachment-257" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 001</figcaption></figure>
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>An employee who is trying to guess the password of another user exemplifies not a weakness but an attack.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-  <h3>Match the type of information security threat to the scenario. (Not all options are used.)</h3>
-
-  <ul>
-    <li><span style="color:#cc0000;">Identity theft</span> – pretending to be someone else by using stolen personal information to apply for a credit card.</li>
-
-    <li><span style="color:#cc0000;">Information theft</span> – obtaining trade secret documents illegally.</li>
-
-    <li><span style="color:#cc0000;">Data loss</span> – installing virus code to destroy surveillance recordings for certain days.</li>
-
-    <li><span style="color:#cc0000;">Disruption of service</span> – preventing users from accessing a website by sending a large number of link requests in a short period (denial-of-service attack).</li>
-
-    <li>Access attack – cracking the password of an administrator account.</li>
-  </ul>
-
-  <table>
-    <tr bgcolor="#e7f7e1">
-      <td>
-        <strong>Answers Explanation &amp; Hints:</strong>
-
+    <h2>Cisco Netacad SRWE Version 7.00 CCNA 2 v7 &amp; v7.02 Modules 5 – 6 – Redundant Networks Exam Answers 2026 –
+      Switching, Routing, and Wireless Essentials</h2>
+    <ol>
+      <li>
+        <h3>Which three components are combined to form a bridge ID?</h3>
         <ul>
-          <li><strong>Information theft</strong> – obtaining trade secret documents illegally.</li>
-          <li><strong>Identity theft</strong> – pretending to be someone else using stolen personal information.</li>
-          <li><strong>Data loss</strong> – destruction or manipulation of data.</li>
-          <li><strong>Disruption of service</strong> – denial-of-service attacks.</li>
+          <li>port ID</li>
+          <li>IP address</li>
+          <li><span style="color: #cc0000;">extended system ID </span></li>
+          <li><span style="color: #cc0000;">MAC address </span></li>
+          <li><span style="color: #cc0000;">bridge priority</span></li>
+          <li>cost<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The three components that are combined to form a bridge ID are bridge priority, extended system
+                      ID, and MAC address.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ul>
-
-        <p>Cracking the password of an administrator account is an example of an access attack.</p>
-      </td>
-    </tr>
-  </table>
-</li>
-<li>
-  <h3>Match the description to the type of firewall filtering. (Not all options are used.)</h3>
-
-  <ul>
-    <li><span style="color:#cc0000;">Stateful packet inspection</span> – prevents or allows access based on whether the traffic is in response to requests from internal hosts.</li>
-
-    <li><span style="color:#cc0000;">URL filtering</span> – prevents or allows access based on web addresses or keywords.</li>
-
-    <li><span style="color:#cc0000;">Application filtering</span> – prevents or allows access based on the port numbers used in the request.</li>
-
-    <li><span style="color:#cc0000;">Packet filtering</span> – prevents or allows access based on the IP or MAC addresses of the source and destination.</li>
-
-    <li>Operating system filtering – prevents or allows access based on the operating system of the source device.</li>
-  </ul>
-
-  <table>
-    <tr bgcolor="#e7f7e1">
-      <td>
-        <strong>Answers Explanation &amp; Hints:</strong>
-
+      </li>
+      <li>
+        <h3>Match the STP protocol with the correct description.</h3>
+        <figure id="attachment_242816" aria-describedby="caption-attachment-242816" style="width: 1024px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001.png"><img
+              fetchpriority="high" decoding="async" class="size-large wp-image-242816"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20346'%3E%3C/svg%3E"
+              alt="CCNA2 Module 5-6 Checkpoint Exam Redundant Networks Exam Answers 001" width="1024" height="346"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1024x346.png 1024w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-300x101.png 300w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-768x259.png 768w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1536x519.png 1536w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001.png 1570w"
+              data-lazy-sizes="(max-width: 1024px) 100vw, 1024px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1024x346.png" /><noscript><img
+                fetchpriority="high" decoding="async" class="size-large wp-image-242816"
+                src="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1024x346.png"
+                alt="CCNA2 Module 5-6 Checkpoint Exam Redundant Networks Exam Answers 001" width="1024" height="346"
+                srcset="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1024x346.png 1024w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-300x101.png 300w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-768x259.png 768w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001-1536x519.png 1536w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-001.png 1570w"
+                sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></a>
+          <figcaption id="caption-attachment-242816" class="wp-caption-text">CCNA2 Module 5-6 Checkpoint Exam Redundant
+            Networks Exam Answers 001</figcaption>
+        </figure>
+        <table>
+          <tbody>
+            <tr bgcolor="#e7f7e1">
+              <td><b>Explanation &amp; Hint:</b></p>
+                <div
+                  class="group w-full text-token-text-primary border-b border-black/10 gizmo:border-0 dark:border-gray-900/50 gizmo:dark:border-0 bg-gray-50 gizmo:bg-transparent dark:bg-[#444654] gizmo:dark:bg-transparent"
+                  data-testid="conversation-turn-23">
+                  <div class="p-4 gizmo:py-2 justify-center text-base md:gap-6 md:py-6 m-auto">
+                    <div
+                      class="flex flex-1 gap-4 text-base mx-auto md:gap-6 gizmo:gap-3 gizmo:md:px-5 gizmo:lg:px-1 gizmo:xl:px-5 md:max-w-2xl lg:max-w-[38rem] gizmo:md:max-w-3xl gizmo:lg:max-w-[40rem] gizmo:xl:max-w-[48rem] xl:max-w-3xl }">
+                      <div
+                        class="relative flex w-[calc(100%-50px)] flex-col gizmo:w-full lg:w-[calc(100%-115px)] agent-turn">
+                        <div class="flex-col gap-1 md:gap-3">
+                          <div class="flex flex-grow flex-col gap-3 max-w-full">
+                            <div
+                              class="min-h-[20px] flex flex-col items-start gap-3 whitespace-pre-wrap break-words overflow-x-auto"
+                              data-message-author-role="assistant"
+                              data-message-id="03f38625-8df2-4c1f-8944-7ef0d63c211c">
+                              <div class="markdown prose w-full break-words dark:prose-invert light">
+                                <p><strong>Rapid PVST+ (Per-VLAN Spanning Tree Plus):</strong></p>
+                                <ul>
+                                  <li>Rapid PVST+ is an extension of the original PVST+ (Per-VLAN Spanning Tree Plus)
+                                    protocol. It&#8217;s a Cisco proprietary enhancement to the Spanning Tree Protocol
+                                    (STP) that was developed to provide faster convergence and improved redundancy in
+                                    VLAN-based Ethernet networks.</li>
+                                  <li>Unlike standard STP, which operates with a single spanning tree for the entire
+                                    network, Rapid PVST+ creates a separate spanning tree for each VLAN. This allows for
+                                    load balancing and redundancy on a per-VLAN basis.</li>
+                                  <li>Rapid PVST+ incorporates features of the IEEE 802.1w Rapid Spanning Tree Protocol
+                                    (RSTP) for faster convergence, ensuring that network topology changes are quickly
+                                    adapted to without causing downtime.</li>
+                                </ul>
+                                <p><strong>STP (Spanning Tree Protocol):</strong></p>
+                                <ul>
+                                  <li>STP is a network protocol that prevents loops in Ethernet networks by creating a
+                                    loop-free logical topology. Loops can lead to broadcast storms and other network
+                                    issues, so STP is used to ensure that only one path exists between any two network
+                                    devices.</li>
+                                  <li>STP works by designating a single switch as the &#8220;root bridge&#8221; and then
+                                    determining the best paths from each switch to the root bridge. It does this by
+                                    placing some switch ports in a blocking state, preventing traffic from traversing
+                                    certain paths. When a link or switch fails, STP recalculates the topology to
+                                    reestablish a loop-free network.</li>
+                                  <li>The original STP, defined by IEEE 802.1D, is relatively slow in adapting to
+                                    changes in the network. Variants like RSTP (Rapid Spanning Tree Protocol) and MSTP
+                                    (Multiple Spanning Tree Protocol) were developed to address these limitations.</li>
+                                </ul>
+                                <p><strong>MSTP (Multiple Spanning Tree Protocol):</strong></p>
+                                <ul>
+                                  <li>MSTP, also known as IEEE 802.1s, is a standardized and vendor-neutral extension of
+                                    the Spanning Tree Protocol. It was developed to address some of the shortcomings of
+                                    the original STP and provide a more efficient way of managing multiple VLANs in a
+                                    network.</li>
+                                  <li>MSTP allows network administrators to group VLANs into one or more instances (also
+                                    called &#8220;regions&#8221;), where each instance has its own spanning tree
+                                    topology. This allows for better load balancing and redundancy control, especially
+                                    in networks with a large number of VLANs.</li>
+                                  <li>MSTP is more efficient than running separate instances of STP for each VLAN (as
+                                    done in PVST+ or Rapid PVST+). It reduces the number of spanning tree instances and
+                                    provides more granular control over which VLANs are grouped together.</li>
+                                </ul>
+                                <p>In summary, Rapid PVST+ is a Cisco-specific enhancement of STP, STP is a protocol
+                                  used to prevent network loops, and MSTP is a standardized enhancement that provides a
+                                  more efficient way to manage multiple VLANs in a network.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <h3>In which two port states does a switch learn MAC addresses and process BPDUs in a PVST network? (Choose
+          two.)</h3>
         <ul>
-          <li><strong>Stateful packet inspection</strong> – tracks session state.</li>
-          <li><strong>URL filtering</strong> – filters by website or keyword.</li>
-          <li><strong>Application filtering</strong> – filters by port number.</li>
-          <li><strong>Packet filtering</strong> – filters by IP or MAC address.</li>
+          <li>blocking</li>
+          <li>disabled</li>
+          <li><span style="color: #cc0000;">forwarding </span></li>
+          <li><span style="color: #cc0000;">learning</span></li>
+          <li>listening<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Switches learn MAC addresses at the learning and forwarding port states. They receive and process
+                      BPDUs at the blocking, listening, learning, and forwarding port states.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ul>
-      </td>
-    </tr>
-  </table>
-</li>
-
-
-<li>
-<h3>What is the purpose of the network security authentication function?</h3>
-<figure id="attachment_255" aria-describedby="caption-attachment-255" style="width: 229px" class="wp-caption alignnone"><img decoding="async" class="size-full wp-image-255" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20229%20226'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 03" width="229" height="226" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-03-1.jpg.webp" /><noscript><img decoding="async" class="size-full wp-image-255" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-03-1.jpg.webp" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 03" width="229" height="226" /></noscript><figcaption id="caption-attachment-255" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 03</figcaption></figure>
-<ul>
-<li><span style="color: #cc0000;">to require users to prove who they are</span></li>
-<li>to determine which resources a user can access</li>
-<li>to keep track of the actions of a user</li>
-<li>to provide challenge and response questions<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Authentication, authorization, and accounting are network services collectively known as AAA. Authentication requires users to prove who they are. Authorization determines which resources the user can access. Accounting keeps track of the actions of the user.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which firewall feature is used to ensure that packets coming into a network are legitimate responses to requests initiated from internal hosts?</h3>
-<ul>
-<li><span style="color: #cc0000;">stateful packet inspection</span></li>
-<li>URL filtering</li>
-<li>application filtering</li>
-<li>packet filtering<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Stateful packet inspection on a firewall checks that incoming packets are actually legitimate responses to requests originating from hosts inside the network. Packet filtering can be used to permit or deny access to resources based on IP or MAC address. Application filtering can permit or deny access based on port number. URL filtering is used to permit or deny access based on URL or on keywords.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>When applied to a router, which command would help mitigate brute-force password attacks against the router?</h3>
-<ul>
-<li>exec-timeout 30</li>
-<li>service password-encryption</li>
-<li>banner motd $Max failed logins = 5$</li>
-<li><span style="color: #cc0000;">login block-for 60 attempts 5 within 60</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The login block-for command sets a limit on the maximum number of failed login attempts allowed within a defined period of time. If this limit is exceeded, no further logins are allowed for the specified period of time. This helps to mitigate brute-force password cracking since it will significantly increase the amount of time required to crack a password. The exec-timeout command specifies how long the session can be idle before the user is disconnected. The service password-encryption command encrypts the passwords in the running configuration. The banner motd command displays a message to users who are logging in to the device.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Identify the steps needed to configure a switch for SSH. The answer order does not matter. (Not all options are used.)</h3>
-<figure id="attachment_260" aria-describedby="caption-attachment-260" style="width: 1906px" class="wp-caption alignnone"><img decoding="async" class="size-full wp-image-260" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201906%20763'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 004" width="1906" height="763" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1.jpg 1906w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-300x120.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-1024x410.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-768x307.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-1536x615.jpg 1536w" data-lazy-sizes="(max-width: 1906px) 100vw, 1906px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1.jpg" /><noscript><img decoding="async" class="size-full wp-image-260" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1.jpg" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 004" width="1906" height="763" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1.jpg 1906w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-300x120.jpg 300w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-1024x410.jpg 1024w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-768x307.jpg 768w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-004-1-1536x615.jpg 1536w" sizes="(max-width: 1906px) 100vw, 1906px" /></noscript><figcaption id="caption-attachment-260" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 004</figcaption></figure>
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The <b>login </b>and <b>password cisco</b> commands are used with Telnet switch configuration, not SSH configuration.</td>
-</tr>
-</tbody>
-</table>
-</li>
-
-<li>
-  <h3>Identify the steps needed to configure a switch for SSH. The answer order does not matter. (Not all options are used.)</h3>
-
-  <ul>
-    <li><span style="color:#cc0000;">Create a local user.</span></li>
-
-    <li><span style="color:#cc0000;">Generate RSA keys.</span></li>
-
-    <li>Use the login command.</li>
-
-    <li><span style="color:#cc0000;">Configure a domain name.</span></li>
-
-    <li><span style="color:#cc0000;">Use the login local command.</span></li>
-
-    <li>Use the password cisco command.</li>
-
-    <li><span style="color:#cc0000;">Use the transport input ssh command.</span></li>
-  </ul>
-
-  <table>
-    <tr bgcolor="#e7f7e1">
-      <td>
-        <strong>Answers Explanation &amp; Hints:</strong>
-
-        <p>To configure SSH on a switch, the required steps include:</p>
-
+      </li>
+      <li>
+        <h3>If no bridge priority is configured in PVST, which criteria is considered when electing the root bridge?
+        </h3>
         <ul>
-          <li>Create a local user account.</li>
-          <li>Configure a domain name (required for RSA key generation).</li>
-          <li>Generate RSA keys.</li>
-          <li>Configure the VTY lines to use <strong>login local</strong>.</li>
-          <li>Restrict remote access with <strong>transport input ssh</strong>.</li>
+          <li>lowest IP address</li>
+          <li><span style="color: #cc0000;">lowest MAC address</span></li>
+          <li>highest IP address</li>
+          <li>highest MAC address<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Only one switch can be the root bridge for a VLAN. The root bridge is the switch with the lowest
+                      BID. The BID is determined by priority and the MAC address. If no priority is configured then all
+                      switches use the default priority and the election of the root bridge will be based on the lowest
+                      MAC address.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
         </ul>
+      </li>
+      <li>
+        <h3>Which two network design features require Spanning Tree Protocol (STP) to ensure correct network operation?
+          (Choose two.)</h3>
+        <ul>
+          <li>static default routes</li>
+          <li>implementing VLANs to contain broadcasts</li>
+          <li><span style="color: #cc0000;">redundant links between Layer 2 switches</span></li>
+          <li>link-state dynamic routing that provides redundant routes</li>
+          <li><span style="color: #cc0000;">removing single points of failure with multiple Layer 2
+              switches</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Spanning Tree Protocol (STP) is required to ensure correct network operation when designing a
+                      network with multiple interconnected Layer 2 switches or using redundant links to eliminate single
+                      points of failure between Layer 2 switches. Routing is a Layer 3 function and does not relate to
+                      STP. VLANs do reduce the number of broadcast domains but relate to Layer 3 subnets, not STP.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is the outcome of a Layer 2 broadcast storm?</h3>
+        <ul>
+          <li>Routers will take over the forwarding of frames as switches become congested.</li>
+          <li><span style="color: #cc0000;">New traffic is discarded by the switch because it is unable to be
+              processed.</span></li>
+          <li>CSMA/CD will cause each host to continue transmitting frames.</li>
+          <li>ARP broadcast requests are returned to the transmitting host.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>When the network is saturated with broadcast traffic that is looping between switches, new
+                      traffic is discarded by each switch because it is unable to be processed.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Match the spanning-tree feature with the protocol type.</h3>
+        <figure id="attachment_242817" aria-describedby="caption-attachment-242817" style="width: 1024px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002.png"><img
+              decoding="async" class="size-large wp-image-242817"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20505'%3E%3C/svg%3E"
+              alt="CCNA2 Module 5-6 Checkpoint Exam Redundant Networks Exam Answers 002" width="1024" height="505"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1024x505.png 1024w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-300x148.png 300w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-768x379.png 768w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1536x758.png 1536w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002.png 1570w"
+              data-lazy-sizes="(max-width: 1024px) 100vw, 1024px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1024x505.png" /><noscript><img
+                decoding="async" class="size-large wp-image-242817"
+                src="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1024x505.png"
+                alt="CCNA2 Module 5-6 Checkpoint Exam Redundant Networks Exam Answers 002" width="1024" height="505"
+                srcset="https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1024x505.png 1024w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-300x148.png 300w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-768x379.png 768w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002-1536x758.png 1536w, https://infraexam.com/wp-content/uploads/2026/03/CCNA2-Module-5-6-Checkpoint-Exam-Redundant-Networks-Exam-Answers-002.png 1570w"
+                sizes="(max-width: 1024px) 100vw, 1024px" /></noscript></a>
+          <figcaption id="caption-attachment-242817" class="wp-caption-text">CCNA2 Module 5-6 Checkpoint Exam Redundant
+            Networks Exam Answers 002</figcaption>
+        </figure>
+        <table>
+          <tbody>
+            <tr bgcolor="#e7f7e1">
+              <td><b>Explanation &amp; Hint:</b></p>
+                <p>MST is the Cisco implementation of MSTP (IEEE 802.1s).</p>
+                <p><strong>PVST+ (Per-VLAN Spanning Tree Plus):</strong></p>
+                <ul>
+                  <li>PVST+ is a Cisco proprietary protocol that is an extension of the original IEEE 802.1D Spanning
+                    Tree Protocol (STP). It is used in Ethernet networks to prevent loops and create a loop-free
+                    topology.</li>
+                  <li>PVST+ operates by creating a separate spanning tree for each VLAN in the network. This means that
+                    it can calculate multiple spanning trees in parallel, one for each VLAN. This approach allows for
+                    load balancing and redundancy on a per-VLAN basis.</li>
+                </ul>
+                <p><strong>RSTP (Rapid Spanning Tree Protocol):</strong></p>
+                <ul>
+                  <li>RSTP, defined by IEEE 802.1w, is a standard protocol designed to improve the convergence time of
+                    the original STP. It provides faster recovery from network topology changes.</li>
+                  <li>RSTP achieves rapid convergence by using features like port roles (e.g., discarding, learning, or
+                    forwarding), better BPDUs (Bridge Protocol Data Units) with proposal and agreement mechanisms, and
+                    faster aging of MAC address table entries.</li>
+                  <li>RSTP retains backward compatibility with STP, which means it can interact with switches running
+                    the original STP or PVST+.</li>
+                </ul>
+                <p><strong>MSTP (Multiple Spanning Tree Protocol):</strong></p>
+                <ul>
+                  <li>MSTP, defined by IEEE 802.1s, is a standard protocol that provides a more efficient way to manage
+                    multiple VLANs in a network. It is vendor-neutral and designed to overcome some of the limitations
+                    of PVST+ and RSTP.</li>
+                  <li>MSTP allows network administrators to group VLANs into one or more instances (also known as
+                    &#8220;regions&#8221;), and each instance has its own spanning tree. This allows for better load
+                    balancing and redundancy control, especially in networks with numerous VLANs.</li>
+                </ul>
+                <p><strong>MST (Multiple Spanning Tree):</strong></p>
+                <ul>
+                  <li>MST is the practical implementation of MSTP, where VLANs are grouped into instances, and each
+                    instance has its own spanning tree topology. MSTP calculates the minimum number of spanning tree
+                    instances necessary to cover all VLANs in the network, reducing the computational overhead.</li>
+                </ul>
+                <p><strong>Rapid PVST+ (Rapid Per-VLAN Spanning Tree Plus):</strong></p>
+                <ul>
+                  <li>Rapid PVST+ is a Cisco proprietary extension of the original PVST+ protocol. It combines the
+                    benefits of PVST+ and RSTP to create a faster-converging, loop-free network.</li>
+                  <li>Similar to PVST+, Rapid PVST+ creates a separate spanning tree for each VLAN, allowing for
+                    per-VLAN load balancing and redundancy. However, it incorporates RSTP features to achieve faster
+                    convergence in response to network topology changes.</li>
+                </ul>
+                <p>In summary, PVST+ is Cisco&#8217;s proprietary per-VLAN STP, RSTP is a standard protocol for faster
+                  STP convergence, MSTP is a standard protocol for efficient management of multiple VLANs, MST is the
+                  practical implementation of MSTP, and Rapid PVST+ is Cisco&#8217;s enhanced version of PVST+ with
+                  rapid convergence capabilities. Each of these protocols serves to prevent network loops and optimize
+                  network performance.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <h3>When the show spanning-tree vlan 33 command is issued on a switch, three ports are shown in the forwarding
+          state. In which two port roles could these interfaces function while in the forwarding state? (Choose two.)
+        </h3>
+        <ul>
+          <li>disabled</li>
+          <li><span style="color: #cc0000;">designated </span></li>
+          <li><span style="color: #cc0000;">root</span></li>
+          <li>alternate</li>
+          <li>blocked<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The role of each of the three ports will be either designated port or root port. Ports in the
+                      disabled state are administratively disabled. Ports in the blocking state are alternate ports.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A set of switches is being connected in a LAN topology. Which STP bridge priority value will make it least
+          likely for the switch to be selected as the root?</h3>
+        <ul>
+          <li>4096</li>
+          <li>32768</li>
+          <li><span style="color: #cc0000;">61440</span></li>
+          <li>65535<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The STP bridge priority is a two byte number, but it can only be customized in increments of
+                      4096. The smaller number is preferred, but the largest usable priority value is 61440.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is the function of STP in a scalable network?</h3>
+        <ul>
+          <li>It decreases the size of the failure domain to contain the impact of failures.</li>
+          <li>It protects the edge of the enterprise network from malicious activity.</li>
+          <li><span style="color: #cc0000;">It disables redundant paths to eliminate Layer 2 loops.</span></li>
+          <li>It combines multiple switch trunk links to act as one logical link for increased bandwidth.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>STP is an important component in a scalable network because it allows redundant physical
+                      connections between Layer 2 devices to be implemented without creating Layer 2 loops. STP prevents
+                      Layer 2 loops from forming by disabling interfaces on Layer 2 devices when they would create a
+                      loop.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is a characteristic of spanning tree?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">It is enabled by default on Cisco switches.</span></li>
+          <li>It has a TTL mechanism that works at Layer 2.</li>
+          <li>It prevents propagation of Layer 2 broadcast frames.</li>
+          <li>It is used to discover information about an adjacent Cisco device.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Spanning tree does work at Layer 2 on Ethernet-based networks and is enabled by default, but it
+                      does not have a TTL mechanism. Spanning tree exists because Layer 2 frames do not have a TTL
+                      mechanism. Layer 2 frames are still broadcast when spanning tree is enabled, but the frames can
+                      only be transmitted through a single path through the Layer 2 network that was created by spanning
+                      tree. Cisco Discovery Protocol (CDP) is used to discover information about an adjacent Cisco
+                      device.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which spanning tree standard supports only one root bridge so that traffic from all VLANs flows over the
+          same path?</h3>
+        <ul>
+          <li>Rapid PVST</li>
+          <li><span style="color: #cc0000;">802.1D</span></li>
+          <li>MST</li>
+          <li>PVST+<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>MST is the Cisco implementation of MSTP, an IEEE standard protocol that provides up to 16
+                      instances of RSTP. PVST+ provides a separate 802.1D spanning-tree instance for each VLAN that is
+                      configured in the network. 802.1D is the original STP standard defined by the IEEE and allows for
+                      only one root bridge for all VLANs. 802.1w, or RSTP, provides faster convergence but still uses
+                      only one STP instance for all VLANs.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is the purpose of the Spanning Tree Protocol (STP)?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">prevents Layer 2 loops</span></li>
+          <li>prevents routing loops on a router</li>
+          <li>creates smaller collision domains</li>
+          <li>creates smaller broadcast domains</li>
+          <li>allows Cisco devices to exchange routing table updates<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The Spanning-Tree Protocol (STP) creates one path through a switch network in order to prevent
+                      Layer 2 loops.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which protocol provides up to 16 instances of RSTP, combines many VLANs with the same physical and logical
+          topology into a common RSTP instance, and provides support for PortFast, BPDU guard, BPDU filter, root guard,
+          and loop guard?</h3>
+        <ul>
+          <li>STP</li>
+          <li>Rapid PVST+</li>
+          <li>PVST+</li>
+          <li><span style="color: #cc0000;">MST</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>MST is the Cisco implementation of MSTP, an IEEE standard protocol that provides up to 16
+                      instances of RSTP and combines many VLANs with the same physical and logical topology into a
+                      common RSTP instance. Each instance supports PortFast, BPDU guard, BPDU filter, root guard, and
+                      loop guard. STP and RSTP assume only one spanning-tree instance for the entire bridged network,
+                      regardless of the number of VLANs. PVST+ provides a separate 802.1D spanning-tree instance for
+                      each VLAN that is configured in the network.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>In which two PVST+ port states are MAC addresses learned? (Choose two.)</h3>
+        <ul>
+          <li><span style="color: #cc0000;">forwarding</span></li>
+          <li>disabled</li>
+          <li><span style="color: #cc0000;">learning</span></li>
+          <li>listening</li>
+          <li>blocking<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The two PVST+ port states during which MAC addresses are learned and populate the MAC address
+                      table are the learning and the forwarding states.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is the value used to determine which port on a non-root bridge will become a root port in a STP
+          network?</h3>
+        <ul>
+          <li>the highest MAC address of all the ports in the switch</li>
+          <li>the lowest MAC address of all the ports in the switch</li>
+          <li>the VTP revision number</li>
+          <li><span style="color: #cc0000;">the path cost</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>STP establishes one root port on each non-root bridge. The root port is the lowest-cost path from
+                      the non-root bridge to the root bridge, indicating the direction of the best path to the root
+                      bridge. This is primarily based on the path cost to the root bridge.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. Which switch will be the root bridge after the election process is complete?</h3>
+        <figure id="attachment_195551" aria-describedby="caption-attachment-195551" style="width: 496px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07.png"><img
+              decoding="async" class="size-full wp-image-195551"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20496%20382'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 07" width="496" height="382"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07.png 496w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07-300x231.png.webp 300w"
+              data-lazy-sizes="(max-width: 496px) 100vw, 496px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195551"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 07" width="496" height="382"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07.png 496w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-07-300x231.png.webp 300w"
+                sizes="(max-width: 496px) 100vw, 496px" /></noscript></a>
+          <figcaption id="caption-attachment-195551" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 07</figcaption>
+        </figure>
+        <ul>
+          <li>S1</li>
+          <li><span style="color: #cc0000;">S2</span></li>
+          <li>S3</li>
+          <li>S4<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The root bridge is determined by the lowest bridge ID, which consists of the priority value and
+                      the MAC address. Because the priority values of all of the switches are identical, the MAC address
+                      is used to determine the root bridge. Because S2 has the lowest MAC address, S2 becomes the root
+                      bridge.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What are two drawbacks to turning spanning tree off and having multiple paths through the Layer 2 switch
+          network? (Choose two.)</h3>
+        <ul>
+          <li>The switch acts like a hub.</li>
+          <li>Port security becomes unstable.</li>
+          <li><span style="color: #cc0000;">The MAC address table becomes unstable. </span></li>
+          <li><span style="color: #cc0000;">Broadcast frames are transmitted indefinitely.</span></li>
+          <li>Port security shuts down all of the ports that have attached devices.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Spanning tree should never be disabled. Without it, the MAC address table becomes unstable,
+                      broadcast storms can render network clients and the switches unusable, and multiple copies of
+                      unicast frames can be delivered to the end devices.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which port role is assigned to the switch port that has the lowest cost to reach the root bridge?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">root port</span></li>
+          <li>non-designated port</li>
+          <li>designated port</li>
+          <li>disabled port<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The root port on a switch is the port with the lowest cost to reach the root bridge.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A small company network has six interconnected Layer 2 switches. Currently all switches are using the
+          default bridge priority value. Which value can be used to configure the bridge priority of one of the switches
+          to ensure that it becomes the root bridge in this design?</h3>
+        <ul>
+          <li>1</li>
+          <li><span style="color: #cc0000;">28672</span></li>
+          <li>32768</li>
+          <li>34816</li>
+          <li>61440<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The default bridge priority value for all Cisco switches is 32768. The range is 0 to 61440 in
+                      increments of 4096. Thus, the values 1 and 34816 are invalid. Configuring one switch with the
+                      lower value of 28672 (and leaving the bridge priority value of all other switches unchanged) will
+                      make the switch become the root bridge.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. The administrator tried to create an EtherChannel between S1 and the other two
+          switches via the commands that are shown, but was unsuccessful. What is the problem?</h3>
+        <figure id="attachment_195545" aria-describedby="caption-attachment-195545" style="width: 417px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01.png"><img
+              decoding="async" class="size-full wp-image-195545"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20417%20236'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 01" width="417" height="236"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01.png 417w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01-300x170.png.webp 300w"
+              data-lazy-sizes="(max-width: 417px) 100vw, 417px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195545"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 01" width="417" height="236"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01.png 417w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-01-300x170.png.webp 300w"
+                sizes="(max-width: 417px) 100vw, 417px" /></noscript></a>
+          <figcaption id="caption-attachment-195545" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 01</figcaption>
+        </figure>
+        <ul>
+          <li>Traffic can only be sent to two different switches if EtherChannel is implemented on Gigabit Ethernet
+            interfaces.​</li>
+          <li>Traffic can only be sent to two different switches if EtherChannel is implemented on Layer 3 switches.​
+          </li>
+          <li><span style="color: #cc0000;">Traffic cannot be sent to two different switches through the same
+              EtherChannel link.</span></li>
+          <li>Traffic cannot be sent to two different switches, but only to two different devices like an
+            EtherChannel-enabled server and a switch.​<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>An EtherChannel link can only be created between two switches or between an EtherChannel-enabled
+                      server and a switch. Traffic cannot be sent to two different switches through the same
+                      EtherChannel link.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which statement is true regarding the use of PAgP to create EtherChannels?</h3>
+        <ul>
+          <li>It requires full duplex.</li>
+          <li><span style="color: #cc0000;">It is Cisco proprietary.</span></li>
+          <li>It requires more physical links than LACP does.</li>
+          <li>It increases the number of ports that are participating in spanning tree.</li>
+          <li>It mandates that an even number of ports (2, 4, 6, etc.) be used for aggregation.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>PAgP is used to automatically aggregate multiple ports into an EtherChannel bundle, but it only
+                      works between Cisco devices. LACP can be used for the same purpose between Cisco and non-Cisco
+                      devices. PAgP must have the same duplex mode at both ends and can use two ports or more. The
+                      number of ports depends on the switch platform or module. An EtherChannel aggregated link is seen
+                      as one port by the spanning-tree algorithm.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What are two requirements to be able to configure an EtherChannel between two switches? (Choose two.)</h3>
+        <ul>
+          <li>The interfaces that are involved need to be contiguous on the switch.</li>
+          <li><span style="color: #cc0000;">All the interfaces need to work at the same speed. </span></li>
+          <li><span style="color: #cc0000;">All the interfaces need to be working in the same duplex mode.</span></li>
+          <li>All interfaces need to be assigned to different VLANs.</li>
+          <li>Different allowed ranges of VLANs must exist on each end.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>All interfaces in the EtherChannel bundle must be assigned to the same VLAN or be configured as a
+                      trunk. If the allowed range of VLANs is not the same, the interfaces do not form an EtherChannel
+                      even when set to auto or desirable mode.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. On the basis of the output that is shown, what can be determined about the
+          EtherChannel bundle?</h3>
+        <figure id="attachment_195549" aria-describedby="caption-attachment-195549" style="width: 497px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05.png"><img
+              decoding="async" class="size-full wp-image-195549"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20497%20324'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 05" width="497" height="324"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05.png 497w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05-300x196.png.webp 300w"
+              data-lazy-sizes="(max-width: 497px) 100vw, 497px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195549"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 05" width="497" height="324"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05.png 497w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-05-300x196.png.webp 300w"
+                sizes="(max-width: 497px) 100vw, 497px" /></noscript></a>
+          <figcaption id="caption-attachment-195549" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 05</figcaption>
+        </figure>
+        <ul>
+          <li>The EtherChannel bundle is down.</li>
+          <li>The EtherChannel bundle is operating at both Layer 2 and Layer 3.</li>
+          <li>Two Gigabit Ethernet ports are used to form the EtherChannel.</li>
+          <li><span style="color: #cc0000;">A Cisco proprietary protocol was used to negotiate the EtherChannel
+              link.</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Two protocols can be used to send negotiation frames that are used to try to establish an
+                      EtherChannel link: PAgP and LACP. PAgP is Cisco proprietary, and LACP adheres to the industry
+                      standard.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which two parameters must match on the ports of two switches to create a PAgP EtherChannel between the
+          switches? (Choose two.)</h3>
+        <ul>
+          <li>MAC address</li>
+          <li><span style="color: #cc0000;">speed </span></li>
+          <li><span style="color: #cc0000;">VLAN information</span></li>
+          <li>PAgP mode</li>
+          <li>port ID<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>For an EtherChannel to be created, the ports that are concerned on the two switches must match in
+                      terms of the speed, duplex, and VLAN information. The PAgP mode must be compatible but not
+                      necessarily equal. The port ID and the MAC addresses do not have to match.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What are two load-balancing methods in the EtherChannel technology? (Choose two.)</h3>
+        <ul>
+          <li>combination of source port and IP to destination port and IP</li>
+          <li><span style="color: #cc0000;">source IP to destination IP</span></li>
+          <li>source port to destination port</li>
+          <li>combination of source MAC and IP to destination MAC and IP</li>
+          <li><span style="color: #cc0000;">source MAC to destination MAC</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Depending on the hardware platform, one or more load-balancing methods can be implemented. These
+                      methods include source MAC to destination MAC load balancing or source IP to destination IP load
+                      balancing, across the physical links.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>When EtherChannel is configured, which mode will force an interface into a port channel without exchanging
+          aggregation protocol packets?</h3>
+        <ul>
+          <li>active</li>
+          <li>auto</li>
+          <li><span style="color: #cc0000;">on</span></li>
+          <li>desirable<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>For both LACP and PAgP, the &#8220;on&#8221; mode will force an interface into an EtherChannel
+                      without exchanging protocol packets.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. An EtherChannel was configured between switches S1 and S2, but the interfaces do not
+          form an EtherChannel. What is the problem?</h3>
+        <figure id="attachment_195547" aria-describedby="caption-attachment-195547" style="width: 436px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03.png"><img
+              decoding="async" class="size-full wp-image-195547"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20436%20254'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 03" width="436" height="254"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03.png 436w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03-300x175.png.webp 300w"
+              data-lazy-sizes="(max-width: 436px) 100vw, 436px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195547"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 03" width="436" height="254"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03.png 436w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-03-300x175.png.webp 300w"
+                sizes="(max-width: 436px) 100vw, 436px" /></noscript></a>
+          <figcaption id="caption-attachment-195547" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 03</figcaption>
+        </figure>
+        <ul>
+          <li>The interface port-channel number has to be different on each switch.</li>
+          <li>The switch ports were not configured with speed and duplex mode.</li>
+          <li>The switch ports have to be configured as access ports with each port having a VLAN assigned.​</li>
+          <li><span style="color: #cc0000;">The EtherChannel was not configured with the same allowed range of VLANs on
+              each interface.</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The guidelines for configuring an EtherChannel link are:Interfaces which form an EtherChannel can
+                      be physically discontiguous, and on different modules.<br />
+                      Interfaces in an EtherChannel have to operate at the same speed and in the same duplex mode.<br />
+                      Interfaces in the EtherChannel must be assigned to the same VLAN, or be configured as a
+                      trunk.<br />
+                      Interfaces in the EtherChannel have to support the same allowed range of VLANs.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which mode configuration setting would allow formation of an EtherChannel link between switches SW1 and SW2
+          without sending negotiation traffic?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">SW1: on</span><br />
+            <span style="color: #cc0000;">SW2: on</span>
+          </li>
+          <li>SW1: desirable<br />
+            SW2: desirable</li>
+          <li>SW1: auto<br />
+            SW2: auto<br />
+            trunking enabled on both switches</li>
+          <li>SW1: auto<br />
+            SW2: auto<br />
+            PortFast enabled on both switches</li>
+          <li>SW1: passive<br />
+            SW2: active</p>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The auto channel-group keyword enables PAgP only if a PAgP device is detected on the opposite
+                      side of the link. If the auto keyword is used, the only way to form an EtherChannel link is if the
+                      opposite connected device is configured with the desirable keyword. PortFast and trunking
+                      technologies are irrelevant to forming an EtherChannel link. Even though an EtherChannel can be
+                      formed if both sides are configured in desirable mode, PAgP is active and PAgP messages are being
+                      sent constantly across the link, decreasing the amount of bandwidth available for user traffic.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which two channel group modes would place an interface in a negotiating state using PAgP? (Choose two.)</h3>
+        <ul>
+          <li>on</li>
+          <li><span style="color: #cc0000;">desirable</span></li>
+          <li>active</li>
+          <li><span style="color: #cc0000;">auto</span></li>
+          <li>passive<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>There are three modes available when configuring an interface for PAgP: on, desirable, and auto.
+                      Only desirable and auto place the interface in a negotiating state. The active and passive states
+                      are used to configure LACP and not PAgP.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A network administrator has configured an EtherChannel between two switches that are connected via four
+          trunk links. If the physical interface for one of the trunk links changes to a down state, what happens to the
+          EtherChannel?</h3>
+        <ul>
+          <li>The EtherChannel will transition to a down state.</li>
+          <li>Spanning Tree Protocol will recalculate the remaining trunk links.</li>
+          <li><span style="color: #cc0000;">The EtherChannel will remain functional.</span></li>
+          <li>Spanning Tree Protocol will transition the failed physical interface into forwarding mode.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>EtherChannel offers redundancy by bundling multiple trunk links into one logical connection.
+                      Failure of one physical link within the EtherChannel will not create a change in the topology and
+                      therefore a recalculation by Spanning Tree is unnecessary. Just one physical link must remain
+                      operational for the EtherChannel to continue to function.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. A network administrator is configuring an EtherChannel link between two switches, SW1
+          and SW2. Which statement describes the effect after the commands are issued on SW1 and SW2?</h3>
+        <figure id="attachment_195552" aria-describedby="caption-attachment-195552" style="width: 654px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08.png"><img
+              decoding="async" class="size-full wp-image-195552"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20654%20306'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 08" width="654" height="306"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08.png 654w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08-300x140.png.webp 300w"
+              data-lazy-sizes="(max-width: 654px) 100vw, 654px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195552"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 08" width="654" height="306"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08.png 654w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-08-300x140.png.webp 300w"
+                sizes="(max-width: 654px) 100vw, 654px" /></noscript></a>
+          <figcaption id="caption-attachment-195552" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 08</figcaption>
+        </figure>
+        <ul>
+          <li><span style="color: #cc0000;">The EtherChannel fails to establish.</span></li>
+          <li>The EtherChannel is established without negotiation.</li>
+          <li>The EtherChannel is established after SW1 initiates the link request.</li>
+          <li>The EtherChannel is established after SW2 initiates the link request.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The interfaces GigabitEthernet 0/1 and GigabitEthernet 0/2 are configured &#8220;on&#8221; for
+                      the EtherChannel link. This mode forces the interface to channel without PAgP or LACP. The
+                      EtherChannel will be established only if the other side is also set to &#8220;on&#8221;. However,
+                      the mode on SW2 side is set to PAgP desirable. Thus the EtherChannel link will not be established.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. A network administrator is configuring an EtherChannel link between two switches, SW1
+          and SW2. However, the EtherChannel link fails to establish. What change in configuration would correct the
+          problem?</h3>
+        <figure id="attachment_195553" aria-describedby="caption-attachment-195553" style="width: 461px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09.png"><img
+              decoding="async" class="size-full wp-image-195553"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20461%20343'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 09" width="461" height="343"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09.png 461w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09-300x223.png.webp 300w"
+              data-lazy-sizes="(max-width: 461px) 100vw, 461px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195553"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 09" width="461" height="343"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09.png 461w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-09-300x223.png.webp 300w"
+                sizes="(max-width: 461px) 100vw, 461px" /></noscript></a>
+          <figcaption id="caption-attachment-195553" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 09</figcaption>
+        </figure>
+        <ul>
+          <li>Configure SW1 EtherChannel mode to on.</li>
+          <li>Configure SW2 EtherChannel mode to on.</li>
+          <li>Configure SW2 EtherChannel mode to auto.</li>
+          <li><span style="color: #cc0000;">Configure SW2 EtherChannel mode to desirable. </span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The EtherChannel mode must be compatible on each side for the link to work. The three modes from
+                      PAgP protocol are on, desirable, and auto. The three modes from LACP protocol are on, active, and
+                      passive. The compatible modes include on-on, auto-desirable, desirable-desirable, active-passive,
+                      and active-active. Any other combinations will not form an EtherChannel link.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A network administrator configured an EtherChannel link with three interfaces between two switches. What is
+          the result if one of the three interfaces is down?</h3>
+        <ul>
+          <li>The EtherChannel fails.</li>
+          <li><span style="color: #cc0000;">The remaining two interfaces continue to load balance traffic.</span></li>
+          <li>The remaining two interfaces become separate links between the two switches.</li>
+          <li>One interface becomes an active link for data traffic and the other becomes a backup link.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>EtherChannel creates an aggregation that is seen as one logical link. It provides redundancy
+                      because the overall link is one logical connection. The loss of one physical link within the
+                      channel does not create a change in the topology; the EtherChannel remains functional.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which statement describes a characteristic of EtherChannel?</h3>
+        <ul>
+          <li>It can combine up to a maximum of 4 physical links.</li>
+          <li>It can bundle mixed types of 100 Mb/s and 1Gb/s Ethernet links.</li>
+          <li>It consists of multiple parallel links between a switch and a router.</li>
+          <li><span style="color: #cc0000;">It is made by combining multiple physical links that are seen as one link
+              between two switches.</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>An EtherChannel is formed by combining multiple (same type) Ethernet physical links so they are
+                      seen and configured as one logical link. It provides an aggregated link between two switches.
+                      Currently each EtherChannel can consist of up to eight compatibly configured Ethernet ports.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A network administrator is configuring an EtherChannel link between switches SW1 and SW2 by using the
+          command SW1(config-if-range)# channel-group 1 mode auto . Which command must be used on SW2 to enable this
+          EtherChannel?</h3>
+        <ul>
+          <li>SW2(config-if-range)# channel-group 1 mode on</li>
+          <li>SW2(config-if-range)# channel-group 1 mode active</li>
+          <li>SW2(config-if-range)# channel-group 1 mode passive</li>
+          <li><span style="color: #cc0000;">SW2(config-if-range)# channel-group 1 mode desirable</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The possible combinations to establish an EtherChannel between SW1 and SW2 using LACP or PAgP are
+                      as follows:<br />
+                      PAgP<br />
+                      on on<br />
+                      auto desirable<br />
+                      desirable desirable</p>
+                    <p>LACP<br />
+                      on on<br />
+                      active active<br />
+                      passive active</p>
+                    <p>The EtherChannel mode chosen on each side of the EtherChannel must be compatible in order to
+                      enable it.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which technology is an open protocol standard that allows switches to automatically bundle physical ports
+          into a single logical link?</h3>
+        <ul>
+          <li>Multilink PPP</li>
+          <li>DTP</li>
+          <li><span style="color: #cc0000;">LACP</span></li>
+          <li>PAgP<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>LACP, or Link Aggregation Control Protocol, is defined by IEEE 802.3ad and is an open standard
+                      protocol. LACP allows switches to automatically bundle switch ports into a single logical link to
+                      increase bandwidth. PAgP, or Port Aggregation Protocol, performs a similar function, but it is a
+                      Cisco proprietary protocol. DTP is Dynamic Trunking Protocol and is used to automatically and
+                      dynamically build trunks between switches. Multilink PPP is used to load-balance PPP traffic
+                      across multiple serial interfaces.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What is a requirement to configure a trunking EtherChannel between two switches?</h3>
+        <ul>
+          <li>The participating interfaces must be physically contiguous on a switch.</li>
+          <li><span style="color: #cc0000;">The allowed range of VLANs must be the same on both switches.</span></li>
+          <li>The participating interfaces must be on the same module on a switch.</li>
+          <li>The participating interfaces must be assigned the same VLAN number on both switches.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>To enable a trunking EtherChannel successfully, the range of VLANs allowed on all the interfaces
+                      must match; otherwise, the EtherChannel cannot be formed. The interfaces involved in an
+                      EtherChannel do not have to be physically contiguous, or on the same module. Because the
+                      EtherChannel is a trunking one, participating interfaces are configured as trunk mode, not access
+                      mode.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. A network administrator issued the show etherchannel summary command on the switch S1.
+          What conclusion can be drawn?</h3>
+        <figure id="attachment_195554" aria-describedby="caption-attachment-195554" style="width: 531px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10.png"><img
+              decoding="async" class="size-full wp-image-195554"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20531%20295'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 10" width="531" height="295"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10.png 531w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10-300x167.png.webp 300w"
+              data-lazy-sizes="(max-width: 531px) 100vw, 531px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10.png" /><noscript><img
+                decoding="async" class="size-full wp-image-195554"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10.png"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 10" width="531" height="295"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10.png 531w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-10-300x167.png.webp 300w"
+                sizes="(max-width: 531px) 100vw, 531px" /></noscript></a>
+          <figcaption id="caption-attachment-195554" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 10</figcaption>
+        </figure>
+        <ul>
+          <li>The EtherChannel is suspended.</li>
+          <li><span style="color: #cc0000;">The EtherChannel is not functional.</span></li>
+          <li>The port aggregation protocol PAgP is misconfigured.</li>
+          <li>FastEthernet ports Fa0/1, Fa0/2, and Fa0/3 do not join the EtherChannel.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The EtherChannel status shows as (SD), which means it is a Layer 2 EtherChannel with a status of
+                      D or down. Because the EtherChannel is down, the status of the interfaces in the channel group is
+                      stand-alone. PAgP is configured on S1, but there is no indication whether it is configured
+                      correctly on S1. The problem might also be the adjacent switch EtherChannel configuration.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Which statement describes an EtherChannel implementation?</h3>
+        <ul>
+          <li>EtherChannel operates only at Layer 2.</li>
+          <li>PAgP cannot be used in conjunction with EtherChannel.</li>
+          <li><span style="color: #cc0000;">A trunked port can be part of an EtherChannel bundle.</span></li>
+          <li>EtherChannel can support up to a maximum of ten separate links.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Up to 16 links can be grouped in an EtherChannel by using the the PAgP or LACP protocol.
+                      EtherChannel can be configured as a Layer 2 bundle or a Layer 3 bundle. Configuring a Layer 3
+                      bundle is beyond the scope of this course. If a trunked port is a part of the EtherChannel bundle,
+                      all ports in the bundle need to be trunk ports and the native VLAN must be the same on all of
+                      these ports. A best practice is to apply the configuration to the port channel interface. The
+                      configuration is then automatically applied to the individual ports.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What are two advantages of using LACP? (Choose two.)</h3>
+        <ul>
+          <li>LACP allows Fast Ethernet and Gigabit Ethernet interfaces to be mixed within a single EtherChannel.</li>
+          <li>It eliminates the need for configuring trunk interfaces when deploying VLANs on multiple switches.</li>
+          <li><span style="color: #cc0000;">It allows directly connected switches to negotiate an EtherChannel
+              link.</span></li>
+          <li>It provides a simulated environment for testing link aggregation.</li>
+          <li>It decreases the amount of configuration that is needed on a switch.</li>
+          <li><span style="color: #cc0000;">It allows the use of multivendor devices.</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The Link Aggregation Control Protocol (LACP) allows directly connected multivendor switches to
+                      negotiate an EtherChannel link. LACP helps create the EtherChannel link by detecting the
+                      configuration of each side and making sure that they are compatible so that the EtherChannel link
+                      can be enabled when needed.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>What are two advantages of EtherChannel? (Choose two.)</h3>
+        <ul>
+          <li><span style="color: #cc0000;">Configuring the EtherChannel interface provides consistency in the
+              configuration of the physical links.</span></li>
+          <li>Load balancing occurs between links configured as different EtherChannels.</li>
+          <li>EtherChannel uses upgraded physical links to provide increased bandwidth.</li>
+          <li><span style="color: #cc0000;">Spanning Tree Protocol views the physical links in an EtherChannel as one
+              logical connection.</span></li>
+          <li>Spanning Tree Protocol ensures redundancy by transitioning failed interfaces in an EtherChannel to a
+            forwarding state.<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>EtherChannel configuration of one logical interface ensures configuration consistency across the
+                      physical links in the EtherChannel. The EtherChannel provides increased bandwidth using existing
+                      switch ports without requiring any upgrades to the physical interfaces. Load balancing methods are
+                      implemented between links that are part of the same Etherchannel. Because EtherChannel views the
+                      bundled physical links as one logical connection, spanning tree recalculation is not required if
+                      one of the bundled physical links fail. If a physical interface fails, STP cannot transition the
+                      failed interface into a forwarding state.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a field that has a default value of 32,768 and is the
+          initial deciding factor when electing a root bridge?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">bridge priority</span></li>
+          <li>BPDUs</li>
+          <li>bridge ID</li>
+          <li>extended system ID</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes a field with a default value of 32,768 and is the initial deciding factor
+                      when electing a root bridge in a Spanning Tree Protocol (STP) environment is &#8220;bridge
+                      priority.&#8221; The bridge priority value is used to determine which switch will become the root
+                      bridge in the spanning tree topology. Switches with lower bridge priority values have a higher
+                      chance of becoming the root bridge, assuming that other factors like the bridge ID tiebreaker (MAC
+                      address) are the same.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes the reference point for all path calculations?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">root bridge</span></li>
+          <li>root port</li>
+          <li>designated port</li>
+          <li>alternate port</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes the reference point for all path calculations in a Spanning Tree Protocol
+                      (STP) network is the &#8220;root bridge.&#8221; The root bridge serves as the central point from
+                      which all other switches calculate their paths to reach different parts of the network. The root
+                      bridge is the switch with the lowest Bridge ID (a combination of Bridge Priority and MAC address)
+                      and is responsible for providing the shortest path for traffic within the spanning tree topology.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a field used to specify a VLAN ID?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">extended system ID</span></li>
+          <li>port ID</li>
+          <li>MAC Address</li>
+          <li>bridge priority</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes a field used to specify a VLAN ID in a switch&#8217;s configuration,
+                      particularly in the context of Spanning Tree Protocol (STP) for VLAN-specific information, is
+                      &#8220;extended system ID.&#8221; The extended system ID includes the VLAN ID, which helps
+                      differentiate between different instances of the spanning tree protocol running on the same switch
+                      for different VLANs. This is commonly used in IEEE 802.1Q (VLAN tagging) and Rapid Spanning Tree
+                      Protocol (RSTP) for VLAN-specific spanning tree instances.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes the switch port closest, in terms of overall cost, to
+          the root bridge?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">root port</span></li>
+          <li>designated port</li>
+          <li>alternate port</li>
+          <li>disabled</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes the switch port closest, in terms of overall cost, to the root bridge in
+                      a Spanning Tree Protocol (STP) network is the &#8220;root port.&#8221; The root port is the port
+                      on a non-root switch that provides the shortest path (lowest cost) to the root bridge in the
+                      spanning tree topology. This port is the one that the switch uses to reach the root bridge, and it
+                      is in a forwarding state to ensure the shortest path for traffic.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes the switch port closest, in terms of overall cost, to
+          the root bridge?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">root port</span></li>
+          <li>designated port</li>
+          <li>alternate port</li>
+          <li>root bridge</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes the switch port closest, in terms of overall cost, to the root bridge in
+                      a Spanning Tree Protocol (STP) network is the &#8220;root port.&#8221; The root port is the port
+                      on a non-root switch that provides the shortest path (lowest cost) to the root bridge in the
+                      spanning tree topology. It is the port through which the switch connects to the root bridge, and
+                      it is in a forwarding state to ensure the shortest path for traffic.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes the reference point for all path calculations?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">root bridge</span></li>
+          <li>root port</li>
+          <li>designated port</li>
+          <li>disabled</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes the reference point for all path calculations in a Spanning Tree Protocol
+                      (STP) network is the &#8220;root bridge.&#8221; The root bridge is the central reference point
+                      from which all other switches in the network calculate their paths and determine which ports are
+                      in forwarding or blocking states. It is the key element in the spanning tree topology, and all
+                      switches strive to find the shortest path to the root bridge to ensure a loop-free network.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a non-root port that is permitted to forward traffic
+          on the network?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">designated port</span></li>
+          <li>alternate port</li>
+          <li>disabled</li>
+          <li>root port</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>A non-root port that is permitted to forward traffic on the network is called a &#8220;designated
+                      port.&#8221; Designated ports are responsible for forwarding traffic from a specific segment of
+                      the network. These ports are selected based on the Spanning Tree Protocol (STP) calculations to
+                      ensure a loop-free topology. The root port, on the other hand, is the port that connects a
+                      non-root switch to the root bridge, and it is responsible for forwarding traffic toward the root
+                      bridge.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a non-root port that is permitted to forward traffic
+          on the network?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">designated port</span></li>
+          <li>alternate port</li>
+          <li>disabled</li>
+          <li>dedicated port</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>A non-root port that is permitted to forward traffic on the network is called a &#8220;designated
+                      port.&#8221; Designated ports are responsible for forwarding traffic on specific network segments,
+                      and they are determined through the Spanning Tree Protocol (STP) calculations to ensure a
+                      loop-free topology. Designated ports are part of the mechanism that STP uses to create a loop-free
+                      tree structure in Ethernet networks.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a field used to specify a VLAN ID?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">extended system ID</span></li>
+          <li>port ID</li>
+          <li>bridge priority</li>
+          <li>bridge ID</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes a field used to specify a VLAN ID in a switch&#8217;s configuration,
+                      particularly in the context of Spanning Tree Protocol (STP) for VLAN-specific information, is the
+                      &#8220;extended system ID.&#8221; The extended system ID includes the VLAN ID, which helps
+                      differentiate between different instances of the spanning tree protocol running on the same switch
+                      for different VLANs. This is commonly used in IEEE 802.1Q (VLAN tagging) and Rapid Spanning Tree
+                      Protocol (RSTP) for VLAN-specific spanning tree instances.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>A switch is configured to run STP. What term describes a field that has a default value of 32,768 and is the
+          initial deciding factor when electing a root bridge?</h3>
+        <ul>
+          <li><span style="color: #cc0000;">bridge priority</span></li>
+          <li>MAC Address</li>
+          <li>extended system ID</li>
+          <li>bridge ID</li>
+          <li>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>The term that describes a field with a default value of 32,768 and is the initial deciding factor
+                      when electing a root bridge in a Spanning Tree Protocol (STP) environment is &#8220;bridge
+                      priority.&#8221; The bridge priority value is used to determine which switch will become the root
+                      bridge in the spanning tree topology. Switches with lower bridge priority values have a higher
+                      chance of becoming the root bridge, assuming that other factors like the bridge ID tiebreaker (MAC
+                      address) are the same.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. What are the possible port roles for ports A, B, C, and D in this RSTP-enabled
+          network?</h3>
+        <figure id="attachment_195550" aria-describedby="caption-attachment-195550" style="width: 403px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06.png.webp"><img
+              decoding="async" class="size-full wp-image-195550"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20403%20380'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 06" width="403" height="380"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06.png.webp 403w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06-300x283.png.webp 300w"
+              data-lazy-sizes="(max-width: 403px) 100vw, 403px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06.png.webp" /><noscript><img
+                decoding="async" class="size-full wp-image-195550"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06.png.webp"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 06" width="403" height="380"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06.png.webp 403w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-06-300x283.png.webp 300w"
+                sizes="(max-width: 403px) 100vw, 403px" /></noscript></a>
+          <figcaption id="caption-attachment-195550" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 06</figcaption>
+        </figure>
+        <ul>
+          <li>alternate, root, designated, root</li>
+          <li>designated, root, alternate, root</li>
+          <li><span style="color: #cc0000;">alternate, designated, root, root</span></li>
+          <li>designated, alternate, root, root<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Because S1 is the root bridge, B is a designated port, and C and D root ports. RSTP supports a
+                      new port type, alternate port in discarding state, that can be port A in this scenario.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. Which switching technology would allow each access layer switch link to be aggregated
+          to provide more bandwidth between each Layer 2 switch and the Layer 3 switch?</h3>
+        <figure id="attachment_195548" aria-describedby="caption-attachment-195548" style="width: 228px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-04.png.webp"><img
+              decoding="async" class="size-full wp-image-195548"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20228%20171'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 04" width="228" height="171"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-04.png.webp" /><noscript><img
+                decoding="async" class="size-full wp-image-195548"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-04.png.webp"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 04" width="228"
+                height="171" /></noscript></a>
+          <figcaption id="caption-attachment-195548" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 04</figcaption>
+        </figure>
+        <ul>
+          <li>HSRP</li>
+          <li>PortFast</li>
+          <li>trunking</li>
+          <li><span style="color: #cc0000;">EtherChannel</span><br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>PortFast is used to reduce the amount of time that a port spends going through the spanning-tree
+                      algorithm, so that devices can start sending data sooner. Trunking can be implemented in
+                      conjunction with EtherChannel, but trunking alone does not aggregate switch links. HSRP is used to
+                      load-balance traffic across two different connections to Layer 3 devices for default gateway
+                      redundancy. HSRP does not aggregate links at either Layer 2 or Layer 3 as EtherChannel does.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Refer to the exhibit. An administrator wants to form an EtherChannel between the two switches by using the
+          Port Aggregation Protocol. If switch S1 is configured to be in auto mode, which mode should be configured on
+          S2 to form the EtherChannel?</h3>
+        <figure id="attachment_195546" aria-describedby="caption-attachment-195546" style="width: 400px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02.png.webp"><img
+              decoding="async" class="size-full wp-image-195546"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%2085'%3E%3C/svg%3E"
+              alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 02" width="400" height="85"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02.png.webp 400w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02-300x64.png.webp 300w"
+              data-lazy-sizes="(max-width: 400px) 100vw, 400px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02.png.webp" /><noscript><img
+                decoding="async" class="size-full wp-image-195546"
+                src="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02.png.webp"
+                alt="CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 – Redundant Networks Exam Answers 02" width="400" height="85"
+                srcset="https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02.png.webp 400w,https://infraexam.com/wp-content/uploads/2023/10/CCNA-2-v7-SRWE-v7.02-–-Modules-5-–-6-–-Redundant-Networks-Exam-Answers-02-300x64.png.webp 300w"
+                sizes="(max-width: 400px) 100vw, 400px" /></noscript></a>
+          <figcaption id="caption-attachment-195546" class="wp-caption-text">CCNA 2 v7 SRWE v7.02 – Modules 5 – 6 –
+            Redundant Networks Exam Answers 02</figcaption>
+        </figure>
+        <ul>
+          <li>on</li>
+          <li>auto</li>
+          <li><span style="color: #cc0000;">desirable </span></li>
+          <li>off<br />
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>An EtherChannel will be formed via PAgP when both switches are in on mode or when one of them is
+                      in auto or desirable mode and the other is in desirable mode.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <h3>Open the PT Activity. Perform the tasks in the activity instructions and then answer the question.</h3>
+        <figure id="attachment_183926" aria-describedby="caption-attachment-183926" style="width: 1475px"
+          class="wp-caption alignnone"><a
+            href="https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001.png.webp"><img
+              decoding="async" class="size-full wp-image-183926"
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201475%201009'%3E%3C/svg%3E"
+              alt="CCNA2 v7 SRWE – Modules 5 – 6 Redundant Networks Exam Answers PT 001" width="1475" height="1009"
+              data-lazy-srcset="https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001.png.webp 1475w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-300x205.png.webp 300w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-1024x700.png.webp 1024w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-768x525.png.webp 768w"
+              data-lazy-sizes="(max-width: 1475px) 100vw, 1475px"
+              data-lazy-src="https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001.png.webp" /><noscript><img
+                decoding="async" class="size-full wp-image-183926"
+                src="https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001.png.webp"
+                alt="CCNA2 v7 SRWE – Modules 5 – 6 Redundant Networks Exam Answers PT 001" width="1475" height="1009"
+                srcset="https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001.png.webp 1475w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-300x205.png.webp 300w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-1024x700.png.webp 1024w,https://infraexam.com/wp-content/uploads/2022/12/CCNA2-v7-SRWE-–-Modules-5-–-6-Redundant-Networks-Exam-Answers-PT-001-768x525.png.webp 768w"
+                sizes="(max-width: 1475px) 100vw, 1475px" /></noscript></a>
+          <figcaption id="caption-attachment-183926" class="wp-caption-text">CCNA2 v7 SRWE – Modules 5 – 6 Redundant
+            Networks Exam Answers PT 001</figcaption>
+        </figure>
+        <h3>Which set of configuration commands issued on SW1 will successfully complete the EtherChannel link between
+          SW1 and SW2?</h3>
+        <ul>
+          <li>interface Port-channel 1<br />
+            no shutdown</li>
+          <li><span style="color: #cc0000;">interface GigabitEthernet0/1 </span><br />
+            <span style="color: #cc0000;">channel-group 1 mode desirable</span>
+          </li>
+          <li>interface GigabitEthernet0/1<br />
+            no shutdown</li>
+          <li>interface GigabitEthernet0/2<br />
+            channel-group 2 mode desirable</p>
+            <table>
+              <tbody>
+                <tr bgcolor="#e7f7e1">
+                  <td><b>Explanation &amp; Hint:</b></p>
+                    <p>Issuing the show running-configuration command on SW1 shows that interface GigabitEthernet0/1 is
+                      missing the channel-group 1 mode desirable command which will compete the EtherChannel
+                      configuration for interface GigabitEthernet0/1 and interface GigabitEthernet0/2.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+        </ul>
+      </li>
+    </ol>
 
-        <p>The <strong>login</strong> and <strong>password cisco</strong> commands are used for Telnet configuration, not SSH.</p>
-      </td>
-    </tr>
-  </table>
-</li>
-
-
-<li>
-<h3>What feature of SSH makes it more secure than Telnet for a device management connection?</h3>
-<ul>
-<li>confidentiality with IPsec</li>
-<li>stronger password requirement</li>
-<li>random one-time port connection</li>
-<li><span style="color: #cc0000;">login information and data encryption </span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Secure Shell (SSH) is a protocol that provides a secure management connection to a remote device. SSH provides security by providing encryption for both authentication (username and password) and the transmitted data. Telnet is a protocol that uses unsecure plaintext transmission. SSH is assigned to TCP port 22 by default. Although this port can be changed in the SSH server configuration, the port is not dynamically changed. SSH does not use IPsec.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is the advantage of using SSH over Telnet?</h3>
-<ul>
-<li>SSH is easier to use.</li>
-<li>SSH operates faster than Telnet.</li>
-<li><span style="color: #cc0000;">SSH provides secure communications to access hosts.</span></li>
-<li>SSH supports authentication for a connection request.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>SSH provides a secure method for remote access to hosts by encrypting network traccic between the SSH client and remote hosts. Although both Telnet and SSH request authentication before a connection is established, Telnet does not support encryption of login credentials.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is the role of an IPS?</h3>
-<ul>
-<li><span style="color: #cc0000;">detecting and blocking of attacks in real time</span></li>
-<li>connecting global threat information to Cisco network security devices</li>
-<li>authenticating and validating traccic</li>
-<li>filtering of nefarious websites<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>An intrusion prevention system (IPS) provides real-time detection and blocking of attacks.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A user is redesigning a network for a small company and wants to ensure security at a reasonable price. The user deploys a new application-aware firewall with intrusion detection capabilities on the ISP connection. The user installs a second firewall to separate the company network from the public network. Additionally, the user installs an IPS on the internal network of the company. What approach is the user implementing?</h3>
-<ul>
-<li>attack based</li>
-<li>risk based</li>
-<li>structured</li>
-<li><span style="color: #cc0000;">layered</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Using diccerent defenses at various points of the network creates a layered approach.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is an accurate description of redundancy?</h3>
-<ul>
-<li>configuring a router with a complete MAC address database to ensure that all frames can be forwarded to the correct destination</li>
-<li>configuring a switch with proper security to ensure that all traccic forwarded through an interface is filtered</li>
-<li>designing a network to use multiple virtual devices to ensure that all traccic uses the best path through the internetwork</li>
-<li><span style="color: #cc0000;">designing a network to use multiple paths between switches to ensure there is no single point of failure</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Redundancy attempts to remove any single point of failure in a network by using multiple physically cabled paths between switches in the network.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network administrator is upgrading a small business network to give high priority to real-time applications traccic. What two types of network services is the network administrator trying to accommodate? (Choose two.)</h3>
-<ul>
-<li><span style="color: #cc0000;">voice </span></li>
-<li><span style="color: #cc0000;">video</span></li>
-<li>instant messaging</li>
-<li>FTP</li>
-<li>SNMP<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Streaming media, such as video, and voice traccic, are both examples of real-time traccic. Real-time traccic needs higher priority through the network than other types of traccic because it is very sensitive to network delay and latency.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is the purpose of a small company using a protocol analyzer utility to capture network traccic on the network segments where the company is considering a network upgrade?</h3>
-<ul>
-<li>to identify the source and destination of local network traccic</li>
-<li>to capture the Internet connection bandwidth requirement</li>
-<li><span style="color: #cc0000;">to document and analyze network traccic requirements on each network segment</span></li>
-<li>to establish a baseline for security analysis after the network is upgraded<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>An important prerequisite for considering network growth is to understand the type and amount of traccic that is crossing the network as well as the current traccic flow. By using a protocol analyzer in each network segment, the network administrator can document and analyze the network traccic pattern for each segment, which becomes the base in determining the needs and means of the network growth.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Refer to the exhibit. Sending 5, 100-byte echos timeout is 2 sec -- UUUUU 0 percent success An administrator is testing connectivity to a remote device with the IP address 10.1.1.1. What does the output of this command indicate?</h3>
-
-<figure id="attachment_256" aria-describedby="caption-attachment-256" style="width: 565px" class="wp-caption alignnone"><img decoding="async" class="size-full wp-image-256" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20565%20112'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 04" width="565" height="112" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04.png 565w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04-300x59.png 300w" data-lazy-sizes="(max-width: 565px) 100vw, 565px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04.png" /><noscript><img decoding="async" class="size-full wp-image-256" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04.png" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 04" width="565" height="112" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04.png 565w, https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-04-300x59.png 300w" sizes="(max-width: 565px) 100vw, 565px" /></noscript><figcaption id="caption-attachment-256" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 04</figcaption></figure>
-<ul>
-<li>Connectivity to the remote device was successful.</li>
-<li><span style="color: #cc0000;">A router along the path did not have a route to the destination.</span></li>
-<li>A ping packet is being blocked by a security device along the path.</li>
-<li>The connection timed out while waiting for a reply from the remote device.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>In the output of the ping command, an exclamation mark (!) indicates a response was successfully received, a period (.) indicates that the connection timed out while waiting for a reply, and the letter &#8220;U&#8221; indicates that a router along the path did not have a route to the destination and sent an ICMP destination unreachable message back to the source.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which method is used to send a ping message specifying the source address for the ping?</h3>
-<ul>
-<li>Issue the ping command from within interface configuration mode.</li>
-<li><span style="color: #cc0000;">Issue the ping command without specifying a destination IP address.</span></li>
-<li>Issue the ping command without extended commands.</li>
-<li>Issue the ping command after shutting down un-needed interfaces.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>By issuing the ping command without a destination IP address in privileged EXEC mode, the Cisco IOS enters extended ping mode. This allows the user to implement extended commands which include source IP address.​</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network engineer is analyzing reports from a recently performed network baseline. Which situation would depict a possible latency issue?</h3>
-<ul>
-<li>a change in the bandwidth according to the show interfaces output</li>
-<li>a next-hop timeout from a traceroute</li>
-<li><span style="color: #cc0000;">an increase in host-to-host ping response times</span></li>
-<li>a change in the amount of RAM according to the show version output<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>While analyzing historical reports an administrator can compare host-to-host timers from the ping command and depict possible latency issues.​</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which statement is true about Cisco IOS ping indicators?​</h3>
-<ul>
-<li>&#8216;!&#8217; indicates that the ping was unsuccessful and that the device may have issues finding a DNS server.</li>
-<li><span style="color: #cc0000;">&#8216;U&#8217; may indicate that a router along the path did not contain a route to the destination address and that the ping was unsuccessful.</span></li>
-<li>&#8216;.&#8217; indicates that the ping was successful but the response time was longer than normal.</li>
-<li>A combination of &#8216;.&#8217; and &#8216;!&#8217; indicates that a router along the path did not have a route to the destination address and responded with an ICMP unreachable message.​<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The most common indicators of a ping issued from the Cisco IOS are &#8220;!&#8221;, &#8220;.&#8221;, and &#8220;U&#8221;. The &#8220;!&#8221; indicates that the ping completed successfully, verifying connectivity at Layer 3. The &#8220;.&#8221; may indicate that a connectivity problem, routing problem, or device security issue exists along the path and that an ICMP destination unreachable message was not provided. The &#8220;U&#8221; indicates that a router along the path may not have had a route to the destination address, and that it responded with an ICMP unreachable message.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A user reports a lack of network connectivity. The technician takes control of the user machine and attempts to ping other computers on the network and these pings fail. The technician pings the default gateway and that also fails. What can be determined for sure by the results of these tests?</h3>
-<ul>
-<li>The NIC in the PC is bad.</li>
-<li>The TCP/IP protocol is not enabled.</li>
-<li>The router that is attached to the same network as the workstation is down.</li>
-<li><span style="color: #cc0000;">Nothing can be determined for sure at this point.</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>In networks today, a failed ping could mean that the other devices on the network are blocking pings. Further investigation such as checking network connectivity from other devices on the same network is warranted.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network technician issues the C:\&gt; tracert -6 www.cisco.com command on a Windows PC. What is the purpose of the -6 command option?</h3>
-<ul>
-<li><span style="color: #cc0000;">It forces the trace to use IPv6.</span></li>
-<li>It limits the trace to only 6 hops.</li>
-<li>It sets a 6 milliseconds timeout for each replay.</li>
-<li>It sends 6 probes within each TTL time period.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The -6 option in the command C:\&gt; tracert -6 www.cisco.com is used to force the trace to use IPv6.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Why would a network administrator use the tracert utility?</h3>
-<ul>
-<li>to determine the active TCP connections on a PC</li>
-<li>to check information about a DNS name in the DNS server</li>
-<li><span style="color: #cc0000;">to identify where a packet was lost or delayed on a network</span></li>
-<li>to display the IP address, default gateway, and DNS server address for a PC<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The tracert utility is used to identify the path a packet takes from source to destination. Tracert is commonly used when packets are dropped or not reaching a specific destination.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A ping fails when performed from router R1 to directly connected router R2. The network administrator then proceeds to issue the show cdp neighbors command. Why would the network administrator issue this command if the ping failed between the two routers?</h3>
-<ul>
-<li>The network administrator suspects a virus because the ping command did not work.</li>
-<li><span style="color: #cc0000;">The network administrator wants to verify Layer 2 connectivity.</span></li>
-<li>The network administrator wants to verify the IP address configured on router R2.</li>
-<li>The network administrator wants to determine if connectivity can be established from a non-directly connected network.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The show cdp neighbors command can be used to prove that Layer 1 and Layer 2 connectivity exists between two Cisco devices. For example, if two devices have duplicate IP addresses, a ping between the devices will fail, but the output of show cdp neighbors will be successful. The show cdp neighbors detail could be used to verify the IP address of the directly connected device in case the same IP address is assigned to the two routers.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network engineer is troubleshooting connectivity issues among interconnected Cisco routers and switches. Which command should the engineer use to find the IP address information, host name, and IOS version of neighboring network devices?</h3>
-<ul>
-<li>show version</li>
-<li>show ip route</li>
-<li>show interfaces</li>
-<li><span style="color: #cc0000;">show cdp neighbors detail</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The show cdp neighbors detail command reveals much information about neighboring Cisco devices, including the IP address, the capabilities, host name, and IOS version. The show interfaces and show version commands display information about the local device.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What information about a Cisco router can be verified using the show version command?</h3>
-<ul>
-<li>the routing protocol version that is enabled</li>
-<li><span style="color: #cc0000;">the value of the configuration register</span></li>
-<li>the operational status of serial interfaces</li>
-<li>the administrative distance used to reach networks<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The value of the configuration register can be verified with the show version command.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which command should be used on a Cisco router or switch to allow log messages to be displayed on remotely connected sessions using Telnet or SSH?</h3>
-<ul>
-<li>debug all</li>
-<li>logging synchronous</li>
-<li>show running-config​</li>
-<li><span style="color: #cc0000;">terminal monitor</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The terminal monitor command is very important to use when log messages appear. Log messages appear by default when a user is directly consoled into a Cisco device, but require the terminal monitor command to be entered when a user is accessing a network device remotely.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which command can an administrator issue on a Cisco router to send debug messages to the vty lines?</h3>
-<ul>
-<li><span style="color: #cc0000;">terminal monitor</span></li>
-<li>logging console</li>
-<li>logging buccered</li>
-<li>logging synchronous<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Debug messages, like other IOS log messages, are sent to the console line by default. Sending these messages to the terminal lines requires the terminal monitor command.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>By following a structured troubleshooting approach, a network administrator identified a network issue after a conversation with the user. What is the next step that the administrator should take?</h3>
-<ul>
-<li>Verify full system functionality.</li>
-<li>Test the theory to determine cause.</li>
-<li><span style="color: #cc0000;">Establish a theory of probable causes.</span></li>
-<li>Establish a plan of action to resolve the issue.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>A structured network troubleshooting approach should include these steps in sequence:Identify the problem.<br />
-Establish a theory of probable causes.<br />
-Test the theory to determine cause.<br />
-Establish a plan of action to resolve the issue.<br />
-Verify full system functionality and implement preventive measures.<br />
-Document findings, actions, and outcomes.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Users are complaining that they are unable to browse certain websites on the Internet. An administrator can successfully ping a web server via its IP address, but cannot browse to the domain name of the website. Which troubleshooting tool would be most useful in determining where the problem is?</h3>
-<ul>
-<li>netstat</li>
-<li>tracert</li>
-<li><span style="color: #cc0000;">nslookup</span></li>
-<li>ipconfig<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The nslookup command can be used to look up information about a particular DNS name in the DNS server. The information includes the IP address of the DNS server being used as well as the IP address associated with the specified DNS name. This command can help verify the DNS that is used and if the domain name to IP address resolution works.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An employee complains that a Windows PC cannot connect to the Internet. A network technician issues the ipconfig command on the PC and is shown an IP address of 169.254.10.3. Which two conclusions can be drawn? (Choose two.)</h3>
-<ul>
-<li><span style="color: #cc0000;">The PC cannot contact a DHCP server.</span></li>
-<li>The DNS server address is misconfigured.</li>
-<li>The default gateway address is not configured.</li>
-<li><span style="color: #cc0000;">The PC is configured to obtain an IP address automatically.</span></li>
-<li>The enterprise network is misconfigured for dynamic routing.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>When a Windows PC is configured to obtain an IP address automatically, the PC will try to obtain an IP address from a DHCP server. When the PC cannot contact a DHCP server, Windows will automatically assign an address belonging to the 169.254.0.0/16 range.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Refer to the exhibit. Host H3 is having trouble communicating with host H1. The network administrator suspects a problem exists with the H3 workstation and wants to prove that there is no problem with the R2 configuration. What tool could the network administrator use on router R2 to prove that communication exists to host H1 from the interface on R2, which is the interface that H3 uses when communicating with remote networks?</h3>
-<figure id="attachment_254" aria-describedby="caption-attachment-254" style="width: 432px" class="wp-caption alignnone"><img decoding="async" class="size-full wp-image-254" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20432%20270'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 01" width="432" height="270" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp 432w,https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01-300x188.png.webp 300w" data-lazy-sizes="(max-width: 432px) 100vw, 432px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp" /><noscript><img decoding="async" class="size-full wp-image-254" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 01" width="432" height="270" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp 432w,https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01-300x188.png.webp 300w" sizes="(max-width: 432px) 100vw, 432px" /></noscript><figcaption id="caption-attachment-254" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 01</figcaption></figure>
-<ul>
-<li>traceroute</li>
-<li>show cdp neighbors</li>
-<li>Telnet</li>
-<li><span style="color: #cc0000;">an extended ping</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>An extended ping allows an administrator to select specific ping features. For example in this situation, the network administrator could do an extended ping and specify a source address of the gigabit Ethernet port on the router. The destination address would be the IP address of host H1. If the ping succeeds connectivity exists from the Ethernet router interface on R2 to device H1.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Refer to the exhibit. Baseline documentation for a small company had ping round trip time statistics of 36/97/132 between hosts H1 and H3. Today the network administrator checked connectivity by pinging between hosts H1 and H3 that resulted in a round trip time of 1458/2390/6066. What does this indicate to the network administrator?</h3>
-<figure id="attachment_254" aria-describedby="caption-attachment-254" style="width: 432px" class="wp-caption alignnone"><img decoding="async" class="size-full wp-image-254" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20432%20270'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 01" width="432" height="270" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp 432w,https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01-300x188.png.webp 300w" data-lazy-sizes="(max-width: 432px) 100vw, 432px" data-lazy-src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp" /><noscript><img decoding="async" class="size-full wp-image-254" src="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers 01" width="432" height="270" srcset="https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01.png.webp 432w,https://infraexam.com/wp-content/uploads/2020/04/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-01-300x188.png.webp 300w" sizes="(max-width: 432px) 100vw, 432px" /></noscript><figcaption id="caption-attachment-254" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers 01</figcaption></figure>
-<ul>
-<li>Connectivity between H1 and H3 is fine.</li>
-<li>H3 is not connected properly to the network.</li>
-<li>Something is causing interference between H1 and R1.</li>
-<li>Performance between the networks is within expected parameters.</li>
-<li><span style="color: #cc0000;">Something is causing a time delay between the networks. </span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Ping round trip time statistics are shown in milliseconds. The larger the number the more delay. A baseline is critical in times of slow performance. By looking at the documentation for the performance when the network is performing fine and comparing it to information when there is a problem, a network administrator can resolve problems faster.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which network service automatically assigns IP addresses to devices on the network?</h3>
-<ul>
-<li><span style="color: #cc0000;">DHCP</span></li>
-<li>Telnet</li>
-<li>DNS</li>
-<li>traceroute<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Dynamic Host Configuration Protocol (DHCP) can be used to allow end devices to automatically configure IP information, such as their IP address, subnet mask, DNS server, and default gateway. The DNS service is used to provide domain name resolution, mapping hostnames to IP addresses. Telnet is a method for remotely accessing a CLI session of a switch or router. Traceroute is a command used to determine the path a packet takes as it traverses the network.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which command can an administrator execute to determine what interface a router will use to reach remote networks?</h3>
-<ul>
-<li>show arp</li>
-<li>show interfaces</li>
-<li><span style="color: #cc0000;">show ip route</span></li>
-<li>show protocols<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The show ip route command is used to display the IP routing table of the router. The IP routing table will show a list of known local and remote networks and the interfaces that the router will use to reach those networks.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>On which two interfaces or ports can security be improved by configuring executive timeouts? (Choose two.)</h3>
-<ul>
-<li>Fast Ethernet interfaces</li>
-<li><span style="color: #cc0000;">console ports</span></li>
-<li>serial interfaces</li>
-<li><span style="color: #cc0000;">vty ports</span></li>
-<li>loopback interfaces<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Executive timeouts allow the Cisco device to automatically disconnect users after they have been idle for the specified time. Console, vty, and aux ports can be configured with executive timeouts.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>When configuring SSH on a router to implement secure network management, a network engineer has issued the login local and transport input ssh line vty commands. What three additional configuration actions have to be performed to complete the SSH configuration? (Choose three.)</h3>
-<ul>
-<li>Set the user privilege levels.</li>
-<li><span style="color: #cc0000;">Generate the asymmetric RSA keys.</span></li>
-<li><span style="color: #cc0000;">Configure the correct IP domain name.</span></li>
-<li>Configure role-based CLI access.</li>
-<li><span style="color: #cc0000;">Create a valid local username and password database.</span></li>
-<li>Manually enable SSH after the RSA keys are generated.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>SSH is automatically enabled after the RSA keys are generated. Setting user privilege levels and configuring role-based CLI access are good security practices but are not a requirement of implementing SSH.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>What is considered the most eccective way to mitigate a worm attack?</h3>
-<ul>
-<li>Change system passwords every 30 days.</li>
-<li>Ensure that all systems have the most current virus definitions.</li>
-<li>Ensure that AAA is configured in the network.</li>
-<li><span style="color: #cc0000;">Download security updates from the operating system vendor and patch all vulnerable systems.</span><br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Because worms take advantage of vulnerabilities in the system itself, the most eccective way to mitigate worm attacks is to download security updates from the operating system vendor and patch all vulnerable systems.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Which statement describes the ping and tracert commands?</h3>
-<ul>
-<li><span style="color: #cc0000;">Tracert shows each hop, while ping shows a destination reply only.</span></li>
-<li>Tracert uses IP addresses; ping does not.</li>
-<li>Both ping and tracert can show results in a graphical display.</li>
-<li>Ping shows whether the transmission is successful; tracert does not.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>The ping utility tests end-to-end connectivity between the two hosts. However, if the message does not reach the destination, there is no way to determine where the problem is located. On the other hand, the traceroute utility ( tracert in Windows) traces the route a message takes from its source to the destination. Traceroute displays each hop along the way and the time it takes for the message to get to that network and back.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A technician is to document the current configurations of all network devices in a college, including those in occ-site buildings. Which protocol would be best to use to securely access the network devices?</h3>
-<ul>
-<li>FTP</li>
-<li>HTTP</li>
-<li><span style="color: #cc0000;">SSH</span></li>
-<li>Telnet<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Telnet sends passwords and other information in clear text, while SSH encrypts its data. FTP and HTTP do not provide remote device access for configuration purposes.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Open the PT Activity. Perform the tasks in the activity instructions and then answer the question.</h3>
-<figure id="attachment_183879" aria-describedby="caption-attachment-183879" style="width: 1217px" class="wp-caption alignnone"><a href="https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001.png"><img decoding="async" class="size-full wp-image-183879" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201217%201031'%3E%3C/svg%3E" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers PT 001" width="1217" height="1031" data-lazy-srcset="https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001.png 1217w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-300x254.png.webp 300w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-1024x867.png.webp 1024w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-768x651.png.webp 768w" data-lazy-sizes="(max-width: 1217px) 100vw, 1217px" data-lazy-src="https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001.png" /><noscript><img decoding="async" class="size-full wp-image-183879" src="https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001.png" alt="CCNA1 v7 - ITNv7 - Modules 16 - 17 Building and Securing a Small Network Exam Answers PT 001" width="1217" height="1031" srcset="https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001.png 1217w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-300x254.png.webp 300w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-1024x867.png.webp 1024w,https://infraexam.com/wp-content/uploads/2022/12/CCNA1-v7-ITNv7-Modules-16-17-Building-and-Securing-a-Small-Network-Exam-Answers-PT-001-768x651.png.webp 768w" sizes="(max-width: 1217px) 100vw, 1217px" /></noscript></a><figcaption id="caption-attachment-183879" class="wp-caption-text">CCNA1 v7 &#8211; ITNv7 &#8211; Modules 16 &#8211; 17 Building and Securing a Small Network Exam Answers PT 001</figcaption></figure>
-<h3>Which command has to be configured on the router to complete the SSH configuration?</h3>
-<ul>
-<li>service password-encryption</li>
-<li><span style="color: #cc0000;">transport input ssh</span></li>
-<li>enable secret class</li>
-<li>ip domain-name cisco.com<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b><br />
-<span class="mattext"> The missing command to complete the SSH configuration is <b> transport input ssh </b> in <b> line vty 0 4 </b> mode.The commands <b> service password-encryption </b> and <b> enable secret class </b> do configure secure features on the router, but are not required to configure SSH. The command <b> ip domain-name cisco.com </b> is not required because the command <strong>ip domain-name span.com</strong> has been used. </span></td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;WhatAreyouwaiting4&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is strong because it uses a passphrase.</span></li>
-<li>It is weak because it is often the default password on new devices.</li>
-<li>It is weak since it uses easily found personal information.</li>
-<li>It is weak since it is a word that is easily found in the dictionary.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;pR3s!d7n&amp;0&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is strong because it uses a minimum of 10 numbers, letters and special characters.</span></li>
-<li>It is weak because it is often the default password on new devices.</li>
-<li>It is weak since it uses easily found personal information.</li>
-<li>It is weak since it is a word that is easily found in the dictionary.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;5$7*4#033!&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is strong because it contains 10 numbers and special characters.</span></li>
-<li>It is weak because it is often the default password on new devices.</li>
-<li>It is weak since it uses easily found personal information.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;pR3s!d7n&amp;0&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is strong because it uses a minimum of 10 numbers, letters and special characters.</span></li>
-<li>It is weak since it is a word that is easily found in the dictionary.</li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is strong because it contains 10 numbers and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;12345678!&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak because it uses a series of numbers or letters.</span></li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is weak since it is a word that is easily found in the dictionary.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;admin&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak because it is often the default password on new devices.</span></li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.</li>
-<li>It is strong because it contains 10 numbers and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;Feb121978&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak because it uses easily found personal information.</span></li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is weak since it is a word that is easily found in the dictionary.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;password&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak because it is a commonly used password.</span></li>
-<li>It is weak since it is a word that is easily found in the dictionary.</li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;RobErT&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak since it uses easily found personal information.</span></li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.</li>
-<li>It is strong because it contains 10 numbers and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator decides to use &#8220;Elizabeth&#8221; as the password on a newly installed router. Which statement applies to the password choice?</h3>
-<ul>
-<li><span style="color: #cc0000;">It is weak because it uses easily found personal information.</span></li>
-<li>It is strong because it uses a passphrase.</li>
-<li>It is weak since it is a word that is easily found in the dictionary.</li>
-<li>It is strong because it uses a minimum of 10 numbers, letters and special characters.<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Answers Explanation &amp; Hints:</b></p>
-<p>Rules for strong passwords:<br />
-* minimum of 8 characters, preferably 10.<br />
-* use complex combinations of numbers, special characters, and upper and lower case letters.<br />
-* avoid repetition, common dictionary words, letter or number sequences.<br />
-* avoid names of children, relatives, pets, birthdays, or any easily identifiable personal information.<br />
-* can be created by misspelling words or replacing vowels with numbers or special characters.</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network technician is troubleshooting an issue and needs to verify the IP addresses of all interfaces on a router. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">show ip interface brief</span></li>
-<li>nslookup</li>
-<li>ipconfig getifaddr en0</li>
-<li>show ip route<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For a network technician troubleshooting on a router and needing to verify the IP addresses of all interfaces, the best command would be:</p>
-<p><strong>show ip interface brief</strong></p>
-<p>This command is used on Cisco routers and provides a summary of all the interfaces, including their IP addresses and status (up/down). It&#8217;s a concise and eccective way to view all the necessary information regarding the interfaces on a router.</p>
-<ul>
-<li><code>nslookup</code> is typically used for querying the Domain Name System (DNS) to obtain domain name or IP address mapping.</li>
-<li><code>ipconfig getifaddr en0</code> is a command used on macOS systems to get the IP address of a specific interface (<code>en0</code> in this case).</li>
-<li><code>show ip route</code> displays the routing table of the router but does not specifically list all interface IP addresses.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Students who are connected to the same switch are having slower than normal response times. The administrator suspects a duplex setting issue. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">show interfaces </span></li>
-<li>ipconfig getifaddr en0</li>
-<li>copy running-config startup-config</li>
-<li>show ip nat translations<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>If a network administrator suspects a duplex mismatch or a similar issue accecting network performance for students connected to the same switch, the most appropriate command to use would be:</p>
-<p><strong>show interfaces</strong></p>
-<p>This command is typically used on Cisco switches and routers. It provides detailed information about the status of each interface, including the duplex setting (half or full), speed, and any errors that might be accecting performance, such as collisions or CRC errors. These details are crucial for diagnosing issues related to physical connectivity and configuration mismatches on the network.</p>
-<ul>
-<li><code>ipconfig getifaddr en0</code> is a command specific to macOS systems and is used to get the IP address of a specific interface, which isn&#8217;t directly relevant for checking duplex settings on a switch.</li>
-<li><code>copy running-config startup-config</code> is a Cisco command used to save the current running configuration to the startup configuration, which is not directly helpful in diagnosing duplex issues.</li>
-<li><code>show ip nat translations</code> displays the Network Address Translation (NAT) translations table on a router, which is not directly related to troubleshooting duplex issues on a switch.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A user wants to know the IP address of the PC. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">ipconfig</span></li>
-<li>copy running-config startup-config</li>
-<li>show interfaces</li>
-<li>show ip nat translations<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b><br />
-For a user who wants to find out the IP address of their PC, the best command to use would be:<strong>ipconfig</strong>This command is used on Windows operating systems. When executed in the Command Prompt, it provides network information about the PC, including the IP address, subnet mask, and default gateway for each network interface.The other commands listed are not suitable for this purpose:</p>
-<ul>
-<li><code>copy running-config startup-config</code> is a Cisco command used to save the current running configuration of a network device to the startup configuration.</li>
-<li><code>show interfaces</code> and <code>show ip nat translations</code> are commands used on Cisco routers and switches, not on PCs for checking their own IP configuration.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A student wants to save a router configuration to NVRAM. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">copy running-config startup-config</span></li>
-<li>show interfaces</li>
-<li>show ip nat translations</li>
-<li>show ip route<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>To save a router&#8217;s current configuration to NVRAM (Non-Volatile Random-Access Memory), ensuring that the configuration is retained even after a reboot, the student should use the command:</p>
-<p><strong>copy running-config startup-config</strong></p>
-<p>This command is used on Cisco routers and switches. It copies the current running configuration (which is active and stored in RAM) to the startup configuration (which is stored in NVRAM). When the device restarts, it loads the configuration stored in the startup-config file.</p>
-<p>The other commands listed serve diccerent purposes:</p>
-<ul>
-<li><code>show interfaces</code> provides detailed information about the router&#8217;s interfaces.</li>
-<li><code>show ip nat translations</code> displays the Network Address Translation (NAT) translation table.</li>
-<li><code>show ip route</code> shows the routing table of the router.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A support technician needs to know the IP address of the wireless interface on a MAC. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">ipconfig getifaddr en0</span></li>
-<li>copy running-config startup-config</li>
-<li>show interfaces</li>
-<li>show ip nat translations<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For a support technician who needs to find out the IP address of the wireless interface on a Mac, the best command to use is:</p>
-<p><strong>ipconfig getifaddr en1</strong></p>
-<p>Typically on a Mac, the <code>en0</code> interface is used for Ethernet (wired connection), and <code>en1</code> is often used for the wireless interface. The command <code>ipconfig getifaddr en1</code> is used in the terminal on macOS to display the IP address assigned to the wireless interface.</p>
-<p>It&#8217;s important to note, however, that the assignment of interface names (<code>en0</code>, <code>en1</code>, etc.) can vary depending on the specific hardware configuration and the version of macOS. In some cases, <code>en0</code> might be the wireless interface, especially in newer Macs without an Ethernet port.</p>
-<p>The other commands listed are not applicable for this purpose:</p>
-<ul>
-<li><code>copy running-config startup-config</code> is a command used on Cisco network devices to save the running configuration to the startup configuration.</li>
-<li><code>show interfaces</code> and <code>show ip nat translations</code> are also Cisco commands and are not applicable to a Mac&#8217;s terminal.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A network technician is troubleshooting an issue and needs to verify all of the IPv6 interface addresses on a router. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">show ipv6 interface</span></li>
-<li>show interfaces</li>
-<li>show ip nat translations</li>
-<li>show ip route<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For a network technician who needs to verify all of the IPv6 interface addresses on a router, the best command to use is:</p>
-<p><strong>show ipv6 interface</strong></p>
-<p>This command, when used on routers that support IPv6, will display details about IPv6 interfaces, including their addresses, status, and other relevant configuration details. It&#8217;s specifically tailored to provide comprehensive information about IPv6 configurations.</p>
-<p>The other commands have diccerent purposes:</p>
-<ul>
-<li><code>show interfaces</code> provides detailed information about all interfaces, including their status and configuration, but it may not provide comprehensive IPv6-specific details.</li>
-<li><code>show ip nat translations</code> and <code>show ip route</code> are commands relevant to IPv4 configurations; <code>show ip nat translations</code> displays the NAT translations table, and <code>show ip route</code> shows the IP routing table.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>A teacher is having dicciculties connecting his PC to the classroom network. He needs to verify that a default gateway is configured correctly. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">ipconfig</span></li>
-<li>copy running-config startup-config</li>
-<li>show interfaces</li>
-<li>show ip nat translations<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For a teacher trying to verify the default gateway configuration on a PC, particularly if it&#8217;s running a Windows operating system, the best command to use is:</p>
-<p><strong>ipconfig</strong></p>
-<p>By opening the Command Prompt and typing <code>ipconfig</code> (or <code>ipconfig /all</code> for more detailed information), the teacher can view all network-related configurations on the PC. This includes the IP address, subnet mask, and importantly, the default gateway. The default gateway address is critical for a device to communicate with networks outside of its local subnet, such as the wider internet.</p>
-<p>The other commands listed are specific to network devices like routers and switches, particularly in a Cisco environment:</p>
-<ul>
-<li><code>copy running-config startup-config</code> is used on Cisco devices to save the current running configuration to the startup configuration.</li>
-<li><code>show interfaces</code> and <code>show ip nat translations</code> are commands used on routers to display interface status and NAT translations, respectively, and are not applicable for checking the default gateway on a PC.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Only employees connected to IPv6 interfaces are having dicciculty connecting to remote networks. The analyst wants to verify that IPv6 routing has been enabled. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">show running-config</span></li>
-<li>show interfaces</li>
-<li>copy running-config startup-config</li>
-<li>show ip nat translations<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For an analyst who needs to verify whether IPv6 routing has been enabled on a device (typically a router), the best command to use would be:</p>
-<p><strong>show running-config</strong></p>
-<p>This command displays the current active configuration on the device. By examining the output of this command, the analyst can check for specific lines in the configuration that enable IPv6 routing, such as <code>ipv6 unicast-routing</code>. If this command is present, it indicates that IPv6 routing is enabled.</p>
-<p>The other commands have diccerent primary functions:</p>
-<ul>
-<li><code>show interfaces</code> provides detailed information about the interfaces (both IPv4 and IPv6, if configured) but doesn&#8217;t directly show whether IPv6 routing is enabled.</li>
-<li><code>copy running-config startup-config</code> is used to save the current configuration (running-config) to the startup configuration. It does not provide information about the state of IPv6 routing.</li>
-<li><code>show ip nat translations</code> displays the NAT translations table for IPv4 and is not related to IPv6 routing.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>An administrator is troubleshooting connectivity issues and needs to determine the IP address of a website. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">nslookup</span></li>
-<li>show ipv6 route</li>
-<li>show ipv6 interface</li>
-<li>copy startup-config running-config<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For an administrator who needs to determine the IP address of a website, the most appropriate command to use is:</p>
-<p><strong>nslookup</strong></p>
-<p>This command is used to query Domain Name System (DNS) servers to find out the IP address associated with a domain name. By typing <code>nslookup</code> followed by the website&#8217;s domain name in a command line interface (such as Command Prompt on Windows or Terminal on Unix/Linux systems), the administrator can find out the IPv4 and IPv6 addresses for that website.</p>
-<p>The other commands are more specific to network device configurations and are not typically used for resolving domain names to IP addresses:</p>
-<ul>
-<li><code>show ipv6 route</code> displays the IPv6 routing table of a router.</li>
-<li><code>show ipv6 interface</code> shows details about IPv6-enabled interfaces on a router.</li>
-<li><code>copy startup-config running-config</code> is a command used on Cisco devices to copy the saved configuration (startup-config) to the current running configuration; it&#8217;s unrelated to DNS queries.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<h3>Only employees connected to IPv6 interfaces are having dicciculty connecting to remote networks. The analyst wants to verify that IPv6 routing has been enabled. What is the best command to use to accomplish the task?</h3>
-<ul>
-<li><span style="color: #cc0000;">show running-config</span></li>
-<li>show ipv6 route</li>
-<li>show ipv6 interface</li>
-<li>copy startup-config running-config<br />
-<table>
-<tbody>
-<tr bgcolor="#e7f7e1">
-<td><b>Explanation &amp; Hint:</b></p>
-<p>For an analyst who needs to verify whether IPv6 routing has been enabled on a device (typically a router), the best command to use would be:</p>
-<p><strong>show running-config</strong></p>
-<p>This command displays the current active configuration on the device. By examining the output of this command, the analyst can check for specific lines in the configuration that enable IPv6 routing, such as <code>ipv6 unicast-routing</code>. If this command is present, it indicates that IPv6 routing is enabled.</p>
-<p>The other commands have diccerent primary functions:</p>
-<ul>
-<li><code>show interfaces</code> provides detailed information about the interfaces (both IPv4 and IPv6, if configured) but doesn&#8217;t directly show whether IPv6 routing is enabled.</li>
-<li><code>copy running-config startup-config</code> is used to save the current configuration (running-config) to the startup configuration. It does not provide information about the state of IPv6 routing.</li>
-<li><code>show ip nat translations</code> displays the NAT translations table for IPv4 and is not related to IPv6 routing.</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-</ol>
   </div>
 
   <script>
@@ -1629,129 +2016,129 @@ For a user who wants to find out the IP address of their PC, the best command to
     }
 
 
-function render() {
-  const item = quiz[idx];
-  if (!item) return;
+    function render() {
+      const item = quiz[idx];
+      if (!item) return;
 
-  // Stable shuffle per question (won’t reshuffle on re-render)
-  if (!item.order) {
-    item.order = shuffledOrder(item.answers.length);
-  }
-  const order = item.order;
-
-  qEl.textContent = item.question;
-  explEl.className = 'explanation';
-  explEl.textContent = '';
-
-  choicesEl.innerHTML = '';
-
-  const a = answered.get(idx);
-  setQuestionState(a ? a.correct : null);
-
-  if (item.multi) {
-    // Multi-answer: checkboxes + explicit "Check" button
-    const selected = new Set(a?.selected || []);
-
-    order.forEach((origIndex) => {
-      const ans = item.answers[origIndex];
-
-      const label = document.createElement('label');
-      label.className = 'choice';
-
-      const input = document.createElement('input');
-      input.type = 'checkbox';
-      input.checked = selected.has(origIndex);
-      input.disabled = !!a;
-      input.style.marginRight = '10px';
-
-      input.addEventListener('change', () => {
-        if (answered.has(idx)) return;
-        if (input.checked) selected.add(origIndex);
-        else selected.delete(origIndex);
-      });
-
-      label.appendChild(input);
-      label.appendChild(document.createTextNode(ans));
-      choicesEl.appendChild(label);
-    });
-
-    checkBtn.onclick = () => {
-      if (answered.has(idx)) return;
-
-      const chosen = Array.from(selected).sort((x, y) => x - y);
-      const correct = arraysEqualAsSets(
-        chosen,
-        item.correctIndexes.slice().sort((x, y) => x - y)
-      );
-
-      answered.set(idx, { selected: chosen, correct });
-
-      if (!correct && item.explanation) {
-        explEl.textContent = item.explanation;
-        explEl.classList.add('show');
+      // Stable shuffle per question (won’t reshuffle on re-render)
+      if (!item.order) {
+        item.order = shuffledOrder(item.answers.length);
       }
+      const order = item.order;
 
-      render();
-    };
+      qEl.textContent = item.question;
+      explEl.className = 'explanation';
+      explEl.textContent = '';
 
-    // If already answered, colorize choices and show explanation only if wrong
-    if (a) {
-      const correctSet = new Set(item.correctIndexes);
-      const selSet = new Set(a.selected);
+      choicesEl.innerHTML = '';
 
-      // children are in *display* order; map display -> orig with `order`
-      Array.from(choicesEl.children).forEach((label, displayPos) => {
-        const origIndex = order[displayPos];
+      const a = answered.get(idx);
+      setQuestionState(a ? a.correct : null);
 
-        if (correctSet.has(origIndex)) label.classList.add('correct');
-        if (selSet.has(origIndex) && !correctSet.has(origIndex)) label.classList.add('wrong');
-      });
+      if (item.multi) {
+        // Multi-answer: checkboxes + explicit "Check" button
+        const selected = new Set(a?.selected || []);
 
-      if (!a.correct && item.explanation) {
-        explEl.textContent = item.explanation;
-        explEl.classList.add('show');
-      }
-    }
+        order.forEach((origIndex) => {
+          const ans = item.answers[origIndex];
 
-  } else {
-    // Single-answer: click to lock in (shuffled)
-    order.forEach((origIndex) => {
-      const ans = item.answers[origIndex];
+          const label = document.createElement('label');
+          label.className = 'choice';
 
-      const div = document.createElement('div');
-      div.className = 'choice';
-      div.textContent = ans;
+          const input = document.createElement('input');
+          input.type = 'checkbox';
+          input.checked = selected.has(origIndex);
+          input.disabled = !!a;
+          input.style.marginRight = '10px';
 
-      if (a) {
-        if (item.correctIndexes.includes(origIndex)) div.classList.add('correct');
-        if (a.selected[0] === origIndex && !a.correct) div.classList.add('wrong');
-      }
+          input.addEventListener('change', () => {
+            if (answered.has(idx)) return;
+            if (input.checked) selected.add(origIndex);
+            else selected.delete(origIndex);
+          });
 
-      div.addEventListener('click', () => {
-        if (answered.has(idx)) return;
+          label.appendChild(input);
+          label.appendChild(document.createTextNode(ans));
+          choicesEl.appendChild(label);
+        });
 
-        const correct = item.correctIndexes.includes(origIndex);
-        answered.set(idx, { selected: [origIndex], correct });
+        checkBtn.onclick = () => {
+          if (answered.has(idx)) return;
 
-        if (!correct && item.explanation) {
+          const chosen = Array.from(selected).sort((x, y) => x - y);
+          const correct = arraysEqualAsSets(
+            chosen,
+            item.correctIndexes.slice().sort((x, y) => x - y)
+          );
+
+          answered.set(idx, { selected: chosen, correct });
+
+          if (!correct && item.explanation) {
+            explEl.textContent = item.explanation;
+            explEl.classList.add('show');
+          }
+
+          render();
+        };
+
+        // If already answered, colorize choices and show explanation only if wrong
+        if (a) {
+          const correctSet = new Set(item.correctIndexes);
+          const selSet = new Set(a.selected);
+
+          // children are in *display* order; map display -> orig with `order`
+          Array.from(choicesEl.children).forEach((label, displayPos) => {
+            const origIndex = order[displayPos];
+
+            if (correctSet.has(origIndex)) label.classList.add('correct');
+            if (selSet.has(origIndex) && !correctSet.has(origIndex)) label.classList.add('wrong');
+          });
+
+          if (!a.correct && item.explanation) {
+            explEl.textContent = item.explanation;
+            explEl.classList.add('show');
+          }
+        }
+
+      } else {
+        // Single-answer: click to lock in (shuffled)
+        order.forEach((origIndex) => {
+          const ans = item.answers[origIndex];
+
+          const div = document.createElement('div');
+          div.className = 'choice';
+          div.textContent = ans;
+
+          if (a) {
+            if (item.correctIndexes.includes(origIndex)) div.classList.add('correct');
+            if (a.selected[0] === origIndex && !a.correct) div.classList.add('wrong');
+          }
+
+          div.addEventListener('click', () => {
+            if (answered.has(idx)) return;
+
+            const correct = item.correctIndexes.includes(origIndex);
+            answered.set(idx, { selected: [origIndex], correct });
+
+            if (!correct && item.explanation) {
+              explEl.textContent = item.explanation;
+              explEl.classList.add('show');
+            }
+
+            render();
+          });
+
+          choicesEl.appendChild(div);
+        });
+
+        if (a && !a.correct && item.explanation) {
           explEl.textContent = item.explanation;
           explEl.classList.add('show');
         }
+      }
 
-        render();
-      });
-
-      choicesEl.appendChild(div);
-    });
-
-    if (a && !a.correct && item.explanation) {
-      explEl.textContent = item.explanation;
-      explEl.classList.add('show');
+      updateTopbar();
     }
-  }
-
-  updateTopbar();
-}
 
 
     function retake() {
@@ -1792,4 +2179,5 @@ function render() {
     prevBtn.addEventListener('click', prev);
   </script>
 </body>
+
 </html>
