@@ -113,6 +113,24 @@
       opacity: 0.8;
     }
 
+
+
+    .q figure {
+      margin: 12px 0;
+    }
+
+    .q img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .q figcaption {
+      font-size: 0.85rem;
+      opacity: 0.75;
+      margin-top: 4px;
+    }
+
     /* NAVBAR */
 
     .navbar {
@@ -2608,6 +2626,34 @@ R1#</pre>
     }
 
 
+    function buildQuestionHtml(qLi, ul) {
+      const parts = [];
+
+      for (const child of qLi.children) {
+        if (child === ul) break;
+        if (child.tagName === 'TABLE') continue;
+
+        const clone = child.cloneNode(true);
+
+        clone.querySelectorAll('img[data-lazy-src]').forEach(img => {
+          img.src = img.getAttribute('data-lazy-src');
+
+          const srcset = img.getAttribute('data-lazy-srcset');
+          if (srcset) img.srcset = srcset;
+
+          const sizes = img.getAttribute('data-lazy-sizes');
+          if (sizes) img.sizes = sizes;
+        });
+
+        clone.querySelectorAll('noscript').forEach(x => x.remove());
+
+        parts.push(clone.outerHTML);
+      }
+
+      return parts.join('');
+    }
+
+
     function parseBank() {
       const items = [];
       const qLis = bank.querySelectorAll('ol > li');
@@ -2617,7 +2663,12 @@ R1#</pre>
         const ul = qLi.querySelector('ul');
         if (!h3 || !ul) return;
 
-        const qText = cleanText(h3.textContent);
+        const qText = cleanText(
+          Array.from(qLi.querySelectorAll(':scope > h3'))
+            .map(h => h.textContent)
+            .join(' ')
+        );
+        const qHtml = buildQuestionHtml(qLi, ul);
 
         const answerLisAll = Array.from(ul.querySelectorAll(':scope > li'));
         if (answerLisAll.length < 2) return;
@@ -2651,6 +2702,7 @@ R1#</pre>
 
         items.push({
           question: qText,
+          questionHtml: qHtml,
           answers,
           correctIndexes,
           explanation,
@@ -2708,7 +2760,7 @@ R1#</pre>
       }
       const order = item.order;
 
-      qEl.textContent = item.question;
+      qEl.innerHTML = item.questionHtml || item.question;
       explEl.className = 'explanation';
       explEl.textContent = '';
 
